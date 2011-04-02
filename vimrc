@@ -98,6 +98,9 @@ set fileencoding=utf-8
 " réduire les functions/methodes
 set foldmethod=syntax
 
+" ne détuit pas le buffer
+set nohidden
+
 "Ajout du template html5
 autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 autocmd BufRead,BufNewFile *.css set ft=css syntax=css3

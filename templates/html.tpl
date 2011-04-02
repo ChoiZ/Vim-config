@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
    <meta charset="utf-8">
-   <title>untitled</title>
+   <title>Web site</title>
 </head>
 <body>
 
