@@ -35,6 +35,14 @@ colorscheme evening
 " Police
 set guifont=Monaco:h18
 
+if has("gui_running")
+    " Theme for Macvim
+    colorscheme torte
+    " Police for Macvim
+    set guifont=Monaco:h10
+endif
+
+
 " affiche les commandes
 set showcmd
 " Affiche le prochain ( ) { } [ ] ...
