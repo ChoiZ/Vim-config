@@ -7,7 +7,7 @@
 " 31 Octobre 2008 pour Vim 7.0.234
 " 
 " Dernière édition le : 
-" Samedi 2 Avril 2011 pour Vim 7.2.108 
+" Lundi 4 Avril 2011 pour Vim 7.2.108 
 "
 " Ce fichier contient mes préférences Vim :)
 "
@@ -25,31 +25,34 @@ filetype plugin on
 filetype indent on
 syntax on
 
+" Active l'affichage des caractéres masqués
+"set list
+"set listchars=tab:?\ ,eol:¶
+
 autocmd FileType html set formatoptions+=tl
 
 " Changer le timeout lors de ctr + une touche
 set timeoutlen=500
 
-" Theme 
+" Theme Macvim
 colorscheme evening
 " Police
 set guifont=Monaco:h18
 
 if has("gui_running")
-    " Theme for Macvim
+    " Theme Macvim
     colorscheme torte
-    " Police for Macvim
+    " Police
     set guifont=Monaco:h10
 endif
-
 
 " affiche les commandes
 set showcmd
 " Affiche le prochain ( ) { } [ ] ...
 set showmatch
 
-" recherche incrémentale
-set incsearch
+" recherche incrémentale (super chiant)
+" set incsearch
 " highlight la recherche
 set hlsearch
 " ignore la case lors d'une recherche
@@ -68,8 +71,8 @@ set ttyfast
 set number
 " affiche la position du curseur
 set ruler
-" souligne la ligne avec le curseur
-set cursorline
+" souligne la ligne avec le curseur (pas pratique)
+"set cursorline
 
 " Indentation
 set preserveindent
