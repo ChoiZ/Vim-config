@@ -3,99 +3,103 @@
 " ChoiZ's .vimrc
 " http://www.choiz.fr/vimrc
 "
-" Création le : 
-" 31 Octobre 2008 pour Vim 7.0.234
-" 
-" Dernière édition le : 
-" Jeudi 18 Aout 2011 pour Vim 7.2.445 
+" Create on: 31th October 2008 for Vim 7.0.234
+" Last edit: 18th January 2012 for Vim 7.3 
 "
-" Ce fichier contient mes préférences Vim :)
+" This file is available on my github: http://www.github.com/ChoiZ/Vim-config
 "
-" Configuration vim complete sur github : http://www.github.com/ChoiZ/Vim-config
-"
-
-" on desactive les commandes automatiques
+" Disable auto cmd
 autocmd!
 
-" mode non compatible avec vi
+" Set nocompatible mode for vi
 set nocompatible
 
+" Set filetype
 filetype on
 filetype plugin on
 filetype indent on
+
+" Set syntax
 syntax on
 
-" Active l'affichage des caractéres masqués ajoute un | pour les tabulations
+" Enable hidden caracters, replace tab by |
 set list
 set listchars=tab:\|\
 
+" For html files set tl options
 autocmd FileType html set formatoptions+=tl
 
-" Changer le timeout lors de ctr + une touche
+" Set timeout on hit ctrl + another key
 set timeoutlen=500
 
-" Police
-set guifont=Monaco:h18
+" Font, Background 
+set guifont=Monaco:h10
+set background=dark
 
-" affiche les commandes
+" Display commands
 set showcmd
 
-" Affiche le prochain ( ) { } [ ] ...
+" Show next bracket ( { [ > ] } )    
 set showmatch
 
-" highlight la recherche
+" highlight search 
 set hlsearch
-" ignore la case lors d'une recherche
+
+" case insensitive on search
 set ignorecase
+
+" case sensitive for caps on search (/the return The, the... /The return only The)
 set smartcase
 
-" Pas de bip lors d'une erreur
+" No error bells
 set noerrorbells
-" Fait clignter l'écran lors d'une erreur
+
+" Blink on error
 set visualbell
 
-" défini qu'on est dans une console (ameliore la rapidite de vim)
+" Improves redrawing
 set ttyfast
 
-" ajoute le numéro des lignes
+" Add line number
 set number
 " affiche la position du curseur
 set ruler
 
+set titlestring=%f title    " Display filename in terminal window
+set rulerformat=%l:%c ruler " Display current column/line
+
 " Indentation
 set preserveindent
-" Indentation automatique
+" Auto Indent
 set autoindent
-" tabulation lors de l'autoindent
+" Tab on autoindent
 set shiftwidth=4
-" arrondi
+" Round 
 set shiftround
-" tabulation = 4 espaces
+" 1 Tab = 4 spaces
 set tabstop=4
 set softtabstop=4
-" remplace les tabulations par des espaces
-set expandtab"
+" Set no expandtab retab
+set noet|retab!
 
-" ligne wrap
+" Ligne wrap
 set wrap
 set textwidth=79
 set formatoptions=qrn1
 
-" defini le code folding
-set foldenable
+" Enable code folding, by syntax
+set foldenable 
+set foldmethod=syntax
 
-" cache la souris lorsque l'on tape
+" Hide mouse on typing 
 set mousehide
 
 " Create dictionary for custom expansions
 set dictionary+=~/.vim/dict.txt
 
-" utilisation de l'utf-8
+" Define file format to utf-8
 set encoding=utf-8
 set fileencoding=utf-8
-
-" réduire les functions/methodes
-set foldmethod=syntax
 
 " ne détuit pas le buffer
 set nohidden
@@ -105,9 +109,9 @@ autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 autocmd BufRead,BufNewFile *.css set ft=css syntax=css3
 autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-" Nombre de commandes dans l'historique
+" Number of cmd in history
 set history=100
-" Nombre de undo permis
+" Number of undo
 set undolevels=100
 
 " PhpDoc
