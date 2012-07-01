@@ -2,3 +2,83 @@ To setup on your system, open a terminal and paste the following code.
 
 git clone https://github.com/ChoiZ/Vim-config ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
+
+
+h1. PHP example file :
+
+h2. Example #1:
+
+Create a file "test.php":
+<pre>
+<?php
+
+function getTime() {
+	return date('H:i:s');
+}
+
+echo getTime(); // here you can see the suggest ;)
+?>
+</pre>
+
+<img scr="/screenshot1.png" />
+
+On the line 3 ( function getTime() { ) you can use <CTRL> + P to make the phpdoc of this function.
+
+<img src="/screenshot2.png" />
+
+<pre>
+<?php
+
+/**
+ * getTime 
+ * 
+ * @access public
+ * @return void
+ */
+function getTime() {
+	return date('H:i:s');
+}
+
+echo getTime();
+?>
+</pre>
+
+<img src="/screenshot3.png" />
+
+
+h2. Example #2: 
+
+Create a file "test.php" with an error:
+<pre>
+<?php 
+
+echo "Hello" // we forget the ;
+echo "World!";
+?>
+</pre>
+
+<img src="/screenshot4.png" />
+
+Now you can use <CTRL> + L (to execute php -l).
+
+<img src="/screenshot5.png" />
+
+Ok now we correct our code:
+
+<img src="/screenshot6.png" />
+
+Again <CTRL> + L (to execute php -l).
+
+<img src="/screenshot7.png" />
+
+
+h2. Example #3:
+
+Create a file "test.php":
+<pre>
+<?php
+file_ 
+</pre>
+
+(you want to display the differents php function like file_exists, file_get_contents... press <CTRL> + O (letter O not zero "0") to get the autosuggest).
+<img src="/screenshot8.png" />
