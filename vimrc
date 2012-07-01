@@ -30,13 +30,20 @@ set list
 " For html files set tl options
 autocmd FileType html set formatoptions+=tl
 
-" Add autocomplete with ctl+x & ctl+n add inoremap to use tab
+" Add autocomplete with <CTRL>+X and <CTRL>+N add inoremap to use <CTRL>+O
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType php set completefunc=phpcomplete#CompletePHP
+autocmd FileType javascript call SetJsOptions()
+autocmd Filetype php call SetPhpOptions()
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-set completeopt=menu
-inoremap <Tab> <C-x><C-o>
+
+inoremap <C-O> <C-x><C-o>
+
+" Jump 10 lines when running out of the screen
+set scrolljump=10
+
+" Indicate jump out of the screen when 5 lines before end of the screen
+set scrolloff=5
+
 
 " Set timeout on hit ctrl + another key
 set timeoutlen=500
@@ -88,7 +95,8 @@ set autoindent
 
 " Tab on autoindent
 set shiftwidth=4
-" Round 
+
+" Round
 set shiftround
 
 " 1 Tab = 4 spaces
@@ -124,22 +132,27 @@ set nohidden
 " Add template for different kind of files
 autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 
-" Set syntax for css / jQuery
-autocmd BufRead,BufNewFile *.css set ft=css syntax=css3
-autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-
 " Number of cmd in history
 set history=100
 
 " Number of undo
 set undolevels=100
 
-" PHP Doc
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+function SetJsOptions()
+	set omnifunc=javascriptcomplete#CompleteJS
+	" JS Beautify
+	inoremap <C-P> <ESC>:call Jsbeautify()<CR>
+	nnoremap <C-P> :call Jsbeautify()<CR>
+	vnoremap <C-P> :call Jsbeautify()<CR>
+endfunction
 
-" JS Beautify
-inoremap <C-O> <ESC>:call Jsbeautify()<CR>
-nnoremap <C-O> :call Jsbeautify()<CR>
-vnoremap <C-O> :call Jsbeautify()<CR>
+function SetPhpOptions()
+	set completefunc=phpcomplete#CompletePHP
+	set completeopt=menu
+	" Map <CTRL>-L to run PHP parser check
+	noremap <C-L> :!php -l %<CR>
+	" PHP Doc
+	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
+	nnoremap <C-P> :call PhpDocSingle()<CR>
+	vnoremap <C-P> :call PhpDocRange()<CR>
+endfunction
