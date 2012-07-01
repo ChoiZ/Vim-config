@@ -1,7 +1,7 @@
 " .vimrc file 
 " Create on: 31th October 2008 for Vim 7.0.234 
 " Last edit: 1st July 2012 for Vim 7.3 
-" version: 562 
+" version: 563 
 " by: François LASSERRE 
 " http://www.choiz.fr/
 " 
