@@ -11,11 +11,14 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 CTAGS Setup:
 ===
+
 On debian / ubuntu:
+
 	$ sudo apt-get install exuberant-ctags
 	don't forget to update the path if it's different in the vimrc's file
 
 On a Mac:
+
 	$ cd ~; mkdir ctags; cd ctags
 	$ curl -O http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
 	$ tar xzvf ctags-5.8.tar.gz
@@ -32,8 +35,25 @@ Using ctags:
 
 Hit <CTRL> + F (like function)
 
-PHP example file :
-==================
+JS example file:
+================
+
+Create a file "test.js":
+
+	function myFunction(param) { console.log('param: '+param); }
+
+You can use the jsBeautify function to "beautify" your js files :
+
+Hit <CTRL> + P
+
+jsBeautify change the code to this:
+
+	function myFunction(param) {
+		console.log('param: ' + param);
+	}
+
+PHP example file:
+=================
 
 Example #1:
 ===
