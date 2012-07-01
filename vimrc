@@ -1,7 +1,7 @@
 " .vimrc file 
 " Create on: 31th October 2008 for Vim 7.0.234 
 " Last edit: 1st July 2012 for Vim 7.3 
-" version: 564 
+" version: 565 
 " by: François LASSERRE 
 " http://www.choiz.fr/
 " 
@@ -25,7 +25,7 @@ syntax on
 
 " Enable hidden caracters, replace tab by »···
 set list
-if version >= 730
+if version >= 703 
 	set lcs=tab:»·,trail:·
 else
 	set listchars=tab:\|\ 
