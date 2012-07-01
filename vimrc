@@ -1,7 +1,7 @@
 " .vimrc file 
 " Create on: 31th October 2008 for Vim 7.0.234 
 " Last edit: 1st July 2012 for Vim 7.3 
-" version: 563 
+" version: 564 
 " by: François LASSERRE 
 " http://www.choiz.fr/
 " 
@@ -24,8 +24,12 @@ filetype indent on
 syntax on
 
 " Enable hidden caracters, replace tab by »···
-set lcs=tab:»·,trail:·
 set list
+if version >= 730
+	set lcs=tab:»·,trail:·
+else
+	set listchars=tab:\|\ 
+endif
 
 " For html files set tl options
 autocmd FileType html set formatoptions+=tl
