@@ -1,9 +1,9 @@
 " .vimrc file 
-" by: François LASSERRE 
-" http://www.choiz.fr/
-" 
 " Create on: 31th October 2008 for Vim 7.0.234 
 " Last edit: 1st July 2012 for Vim 7.3 
+" version: 562 
+" by: François LASSERRE 
+" http://www.choiz.fr/
 " 
 " This file is available on my github repo: 
 " http://www.github.com/ChoiZ/Vim-config
@@ -147,7 +147,9 @@ function SetPhpOptions()
 	set completefunc=phpcomplete#CompletePHP
 	set completeopt=menu
 	" Map <CTRL>-L to run PHP parser check
-	noremap <C-L> :!php -l %<CR>
+	inoremap <C-L> <ESC>:w<CR>:!php -l %<CR>
+	nnoremap <C-L> :w<CR>:!php -l %<CR>
+	vnoremap <C-L> :w<CR>:!php -l %<CR>
 	" PHP Doc
 	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
 	nnoremap <C-P> :call PhpDocSingle()<CR>
