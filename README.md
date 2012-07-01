@@ -9,6 +9,7 @@ h1. PHP example file :
 h2. Example #1:
 
 Create a file "test.php":
+
 	<?php
 
 	function getTime() {
@@ -45,6 +46,7 @@ On the line 3 ( function getTime() { ) you can use <CTRL> + P to make the phpdoc
 h2. Example #2: 
 
 Create a file "test.php" with an error:
+
 	<?php 
 
 	echo "Hello" // we forget the ;
@@ -69,8 +71,10 @@ Again <CTRL> + L (to execute php -l).
 h2. Example #3:
 
 Create a file "test.php":
+
 	<?php
 	file_
 
 (you want to display the differents php function like file_exists, file_get_contents... press <CTRL> + O (letter O not zero "0") to get the autosuggest).
+
 ![screenshot8](https://github.com/ChoiZ/Vim-config/raw/master/screenshot8.png)
