@@ -24,7 +24,7 @@ syntax on
 
 " Enable hidden caracters, replace tab by |
 set list
-set listchars=tab:\|\
+set listchars=tab:\|\ 
 
 " For html files set tl options
 autocmd FileType html set formatoptions+=tl
@@ -35,6 +35,7 @@ set timeoutlen=500
 " Font, Background 
 set guifont=Monaco:h10
 set background=dark
+colorscheme Tomorrow-Night-Bright
 
 " Display commands
 set showcmd
@@ -95,7 +96,7 @@ set foldmethod=syntax
 set mousehide
 
 " Create dictionary for custom expansions
-set dictionary+=~/.vim/dict.txt
+set dictionary+=/Users/ChoiZ/.vim/dict.txt
 
 " Define file format to utf-8
 set encoding=utf-8
@@ -111,6 +112,7 @@ autocmd BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " Number of cmd in history
 set history=100
+
 " Number of undo
 set undolevels=100
 
@@ -118,6 +120,7 @@ set undolevels=100
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR> 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
+
 " Jsbeautify
 inoremap <C-O> <ESC>:call Jsbeautify()<CR> 
 nnoremap <C-O> :call Jsbeautify()<CR> 
