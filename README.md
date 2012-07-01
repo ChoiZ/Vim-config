@@ -4,9 +4,11 @@ git clone https://github.com/ChoiZ/Vim-config ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
 
-h1. PHP example file :
+PHP example file :
+==================
 
-h2. Example #1:
+Example #1:
+===
 
 Create a file "test.php":
 
@@ -43,7 +45,8 @@ On the line 3 ( function getTime() { ) you can use <CTRL> + P to make the phpdoc
 ![screenshot3](https://github.com/ChoiZ/Vim-config/raw/master/screenshot3.png)
 
 
-h2. Example #2: 
+Example #2: 
+===
 
 Create a file "test.php" with an error:
 
@@ -68,7 +71,8 @@ Again <CTRL> + L (to execute php -l).
 ![screenshot7](https://github.com/ChoiZ/Vim-config/raw/master/screenshot7.png)
 
 
-h2. Example #3:
+Example #3:
+===
 
 Create a file "test.php":
 
