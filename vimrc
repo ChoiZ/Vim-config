@@ -99,8 +99,12 @@ set mousehide
 set dictionary+=/Users/ChoiZ/.vim/dict.txt
 
 " Define file format to utf-8
-set encoding=utf-8
+set encoding=utf-8 nobomb
 set fileencoding=utf-8
+
+" Don't add empty newlines at the end of files
+set binary
+set noeol
 
 " ne détuit pas le buffer
 set nohidden
