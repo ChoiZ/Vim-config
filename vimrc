@@ -22,12 +22,20 @@ filetype indent on
 " Set syntax
 syntax on
 
-" Enable hidden caracters, replace tab by |
+" Enable hidden caracters, replace tab by »···
+set lcs=tab:»·,trail:·
 set list
-set listchars=tab:\|\ 
 
 " For html files set tl options
 autocmd FileType html set formatoptions+=tl
+
+" Add autocomplete with ctl+x & ctl+n add inoremap to use tab
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php set completefunc=phpcomplete#CompletePHP
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+set completeopt=menu
+inoremap <Tab> <C-x><C-o>
 
 " Set timeout on hit ctrl + another key
 set timeoutlen=500
@@ -40,7 +48,7 @@ colorscheme Tomorrow-Night-Bright
 " Display commands
 set showcmd
 
-" Show next bracket ( { [ > ] } )    
+" Show next bracket ( { [ > ] } )
 set showmatch
 
 " highlight search 
@@ -96,7 +104,7 @@ set foldmethod=syntax
 set mousehide
 
 " Create dictionary for custom expansions
-set dictionary+=/Users/ChoiZ/.vim/dict.txt
+"set dictionary+=~/.vim/dict.txt
 
 " Define file format to utf-8
 set encoding=utf-8 nobomb
