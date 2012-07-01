@@ -30,14 +30,6 @@ set list
 " For html files set tl options
 autocmd FileType html set formatoptions+=tl
 
-" Add autocomplete with <CTRL>+X and <CTRL>+N add inoremap to use <CTRL>+O
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript call SetJsOptions()
-autocmd Filetype php call SetPhpOptions()
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-
-inoremap <C-O> <C-x><C-o>
-
 " Jump 10 lines when running out of the screen
 set scrolljump=10
 
@@ -138,6 +130,10 @@ set history=100
 " Number of undo
 set undolevels=100
 
+" Add autocomplete with <CTRL>+X and <CTRL>+N add inoremap to use <CTRL>+O
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+autocmd FileType javascript call SetJsOptions()
 function SetJsOptions()
 	set omnifunc=javascriptcomplete#CompleteJS
 	" JS Beautify
@@ -146,6 +142,7 @@ function SetJsOptions()
 	vnoremap <C-P> :call Jsbeautify()<CR>
 endfunction
 
+autocmd Filetype php call SetPhpOptions()
 function SetPhpOptions()
 	set completefunc=phpcomplete#CompletePHP
 	set completeopt=menu
@@ -156,3 +153,7 @@ function SetPhpOptions()
 	nnoremap <C-P> :call PhpDocSingle()<CR>
 	vnoremap <C-P> :call PhpDocRange()<CR>
 endfunction
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+inoremap <C-O> <C-x><C-o>
