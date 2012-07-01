@@ -3,6 +3,34 @@ To setup on your system, open a terminal and paste the following code.
 git clone https://github.com/ChoiZ/Vim-config ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
+SETUP :
+=======
+
+If you don't want to use CTAGS don't forget to add a double quote (") before the last 4 lines in vimrc's file :
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+
+CTAGS Setup:
+===
+On debian / ubuntu:
+	$ sudo apt-get install exuberant-ctags
+	don't forget to update the path if it's different in the vimrc's file
+
+On a Mac:
+	$ cd ~; mkdir ctags; cd ctags
+	$ curl -O http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+	$ tar xzvf ctags-5.8.tar.gz
+	$ cd ctags-5.8
+	$ ./configure
+	$ make
+	$ sudo make install
+	$ sudo chmod a+r /usr/local/bin
+	$ sudo chmod a+x /usr/local/bin
+	don't forget to update the path if it's different in the vimrc's file
+
+Using ctags:
+===
+
+Hit <CTRL> + F (like function)
 
 PHP example file :
 ==================

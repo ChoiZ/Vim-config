@@ -159,3 +159,9 @@ endfunction
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 inoremap <C-O> <C-x><C-o>
+
+" If you want to use ctags
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags' 
+inoremap <C-F> :TlistToggle<CR>
+nnoremap <C-F> :TlistToggle<CR>
+vnoremap <C-F> :TlistToggle<CR>
