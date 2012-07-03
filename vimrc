@@ -1,7 +1,7 @@
 " .vimrc file 
 " Create on: 31th October 2008 for Vim 7.0.234 
-" Last edit: 1st July 2012 for Vim 7.3 
-" version: 565 
+" Last edit: 3rd July 2012 for Vim 7.3 
+" version: 566 
 " by: François LASSERRE 
 " http://www.choiz.fr/
 " 
@@ -121,6 +121,19 @@ set fileencoding=utf-8
 " Don't add empty newlines at the end of files
 set binary
 set noeol
+
+" Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+
+" todolist match
+:call matchadd('Todo','[T|t][O|o][D|d][O|o]')
+:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')
+:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')
+:call matchadd('Notice','[N|n][O|o][T|t][E|e]')
+:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')
+:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')
 
 " Don't destroy buffer
 set nohidden
