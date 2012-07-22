@@ -35,10 +35,10 @@ endif
 autocmd FileType html set formatoptions+=tl
 
 " Jump 10 lines when running out of the screen
-set scrolljump=10
+set scrolljump=1
 
 " Indicate jump out of the screen when 5 lines before end of the screen
-set scrolloff=5
+set scrolloff=1
 
 
 " Set timeout on hit ctrl + another key
