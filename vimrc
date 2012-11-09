@@ -1,6 +1,6 @@
 " .vimrc file 
 " Create on: 31th October 2008 for Vim 7.0.234 
-" Last edit: 18th October 2012 for Vim 7.3 
+" Last edit: 9th November 2012 for Vim 7.3 
 " version: 567 
 " by: François LASSERRE 
 " http://www.choiz.fr/
@@ -109,15 +109,10 @@ set formatoptions=qrn1
 
 " Enable code folding, by syntax
 set foldenable
-set foldmethod=syntax
+noremap <Tab> za
+noremap <S-Tab> zA
+autocmd FileType html,xhtml,javascript,css,c,cpp,php,python setlocal foldmethod=indent
 set foldlevelstart=1
-
-let javaScript_fold=1         " JavaScript
-let php_folding=1             " PHP
-let r_syntax_folding=1        " R
-let sh_fold_enabled=1         " sh
-let vimsyn_folding='af'       " Vim script
-let xml_syntax_folding=1      " XML
 
 " Hide mouse on typing
 set mousehide
@@ -202,3 +197,6 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 inoremap <C-F> :TlistToggle<CR>
 nnoremap <C-F> :TlistToggle<CR>
 vnoremap <C-F> :TlistToggle<CR>
+
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
