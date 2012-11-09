@@ -1,7 +1,7 @@
 " .vimrc file 
 " Create on: 31th October 2008 for Vim 7.0.234 
 " Last edit: 9th November 2012 for Vim 7.3 
-" version: 567 
+" version: 569 
 " by: François LASSERRE 
 " http://www.choiz.fr/
 " 
@@ -112,7 +112,15 @@ set foldenable
 noremap <Tab> za
 noremap <S-Tab> zA
 autocmd FileType html,xhtml,javascript,css,c,cpp,php,python setlocal foldmethod=indent
-set foldlevelstart=1
+"set foldlevelstart=1
+if &columns > 80
+	set foldcolumn=2
+endif
+set foldlevel=99
+
+" Create view for each files
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
 
 " Hide mouse on typing
 set mousehide
@@ -125,11 +133,6 @@ set fileencoding=utf-8
 set binary
 set noeol
 
-" Highlight To do list with green background
-highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
-highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
-highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
-
 " Map Leader
 :let mapleader = ","
 nnoremap <Leader>cp yyp
@@ -138,17 +141,19 @@ nnoremap <Leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 nnoremap <Leader>q gqip
 " spliting
 nnoremap <Leader>w <C-w>v<C-w>l
-nnoremap <Leader>h :new<cr>:e
+nnoremap <Leader>h :new<cr>:e 
 " vimrc
 nnoremap <Leader>rc <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
+" Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+
 " todolist match
 :call matchadd('Todo','[T|t][O|o][D|d][O|o]')
-:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')
 :call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')
-:call matchadd('Notice','[N|n][O|o][T|t][E|e]')
 :call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')
-:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')
 
 " Don't destroy buffer
 set nohidden
@@ -197,6 +202,3 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 inoremap <C-F> :TlistToggle<CR>
 nnoremap <C-F> :TlistToggle<CR>
 vnoremap <C-F> :TlistToggle<CR>
-
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
