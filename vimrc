@@ -1,7 +1,7 @@
 " .vimrc file 
 " Create on: 31th October 2008 for Vim 7.0.234 
-" Last edit: 9th November 2012 for Vim 7.3 
-" version: 569 
+" Last edit: 12th March 2013 for Vim 7.3 
+" version: 570 
 " by: François LASSERRE 
 " http://www.choiz.fr/
 " 
@@ -15,24 +15,36 @@ autocmd!
 " Set nocompatible mode for vi
 set nocompatible
 
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
+nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
+
 " Set filetype
 filetype on
 filetype plugin on
 filetype indent on
 
+autocmd BufEnter *  lcd %:p:h 
+
+" Explicitly tell Vim that the terminal supports 256 colors
+set t_Co=256 
+
 " Set syntax
 syntax on
 
 " Enable hidden caracters, replace tab by »···
-set list
-if version >= 703 
-	set lcs=tab:»·,trail:·
-else
-	set listchars=tab:\|\ 
-endif
+" set list
+" if version >= 703 
+" 	set lcs=tab:»·,trail:·
+" else
+" 	set listchars=tab:\|\ 
+" endif
 
 " For html files set tl options
-autocmd FileType html set formatoptions+=tl
+"autocmd FileType html set formatoptions+=tl
+autocmd FileType html set formatoptions+=gmrLtTa
 
 " Jump 10 lines when running out of the screen
 set scrolljump=1
@@ -77,17 +89,28 @@ set ttyfast
 set number
 set ruler
 
+" View currentline
+set cursorline
+
 " Display filename in terminal window
 set titlestring=%f title
 
-" Display current column/line
-set rulerformat=%l:%c ruler
+" Display current line:column % in page
+set rulerformat=%l:%v\ %P ruler
+
+" Always show the statusline
+set laststatus=2
 
 " Indentation
 set preserveindent
 
 " Auto Indent
-set autoindent
+" set autoindent
+set nosi noai
+
+"set mouse=a
+set mousehide
+"set pastetoggle=<F10>
 
 " Tab on autoindent
 set shiftwidth=4
@@ -105,22 +128,13 @@ set noet|retab!
 " Ligne wrap
 set wrap
 set textwidth=79
-set formatoptions=qrn1
+set formatoptions=qn1
 
 " Enable code folding, by syntax
 set foldenable
 noremap <Tab> za
 noremap <S-Tab> zA
-autocmd FileType html,xhtml,javascript,css,c,cpp,php,python setlocal foldmethod=indent
-"set foldlevelstart=1
-if &columns > 80
-	set foldcolumn=2
-endif
-set foldlevel=99
-
-" Create view for each files
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+set foldmethod=syntax
 
 " Hide mouse on typing
 set mousehide
@@ -198,7 +212,18 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 inoremap <C-O> <C-x><C-o>
 
 " If you want to use ctags
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags' 
+let Tlist_Ctags_Cmd='/usr/bin/ctags' 
 inoremap <C-F> :TlistToggle<CR>
 nnoremap <C-F> :TlistToggle<CR>
 vnoremap <C-F> :TlistToggle<CR>
+nmap <C-G> :TagbarToggle<CR>
+
+" bépo
+noremap s :w
+noremap é w
+noremap w <C-w>
+noremap « <
+noremap » >
+
+"let g:Powerline_symbols = 'fancy'
+let g:gitgutter_highlight_lines = 1
