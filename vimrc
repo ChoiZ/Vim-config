@@ -26,8 +26,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-autocmd BufEnter *  lcd %:p:h 
-
 " Explicitly tell Vim that the terminal supports 256 colors
 set t_Co=256 
 
@@ -35,23 +33,12 @@ set t_Co=256
 syntax on
 
 " Enable hidden caracters, replace tab by »···
-" set list
-" if version >= 703 
-" 	set lcs=tab:»·,trail:·
-" else
-" 	set listchars=tab:\|\ 
-" endif
+set list
+set listchars=tab:\|\ 
 
 " For html files set tl options
 "autocmd FileType html set formatoptions+=tl
 autocmd FileType html set formatoptions+=gmrLtTa
-
-" Jump 10 lines when running out of the screen
-set scrolljump=1
-
-" Indicate jump out of the screen when 5 lines before end of the screen
-set scrolloff=1
-
 
 " Set timeout on hit ctrl + another key
 set timeoutlen=500
@@ -128,7 +115,7 @@ set noet|retab!
 " Ligne wrap
 set wrap
 set textwidth=79
-set formatoptions=qn1
+"set formatoptions=qn1
 
 " Enable code folding, by syntax
 set foldenable
