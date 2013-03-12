@@ -24,7 +24,7 @@ nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
 " Set filetype
 filetype on
 filetype plugin on
-filetype indent on
+"filetype indent on
 
 " Explicitly tell Vim that the terminal supports 256 colors
 set t_Co=256 
