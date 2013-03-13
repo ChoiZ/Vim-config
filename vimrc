@@ -32,10 +32,6 @@ set t_Co=256
 " Set syntax
 syntax on
 
-" Enable hidden caracters, replace tab by »···
-set list
-set listchars=tab:\|\ 
-
 " For html files set tl options
 "autocmd FileType html set formatoptions+=tl
 autocmd FileType html set formatoptions+=gmrLtTa
@@ -180,22 +176,6 @@ function SetJsOptions()
 	vnoremap <C-P> :call Jsbeautify()<CR>
 endfunction
 
-autocmd Filetype php call SetPhpOptions()
-function SetPhpOptions()
-	set completefunc=phpcomplete#CompletePHP
-	set completeopt=menu
-	" Map <CTRL>-L to run PHP parser check
-	inoremap <C-L> <ESC>:w<CR>:!php -l %<CR>
-	nnoremap <C-L> :w<CR>:!php -l %<CR>
-	vnoremap <C-L> :w<CR>:!php -l %<CR>
-	" PHP Doc
-	inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
-	nnoremap <C-P> :call PhpDocSingle()<CR>
-	vnoremap <C-P> :call PhpDocRange()<CR>
-endfunction
-
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-
 inoremap <C-O> <C-x><C-o>
 
 " If you want to use ctags
@@ -213,4 +193,13 @@ noremap « <
 noremap » >
 
 "let g:Powerline_symbols = 'fancy'
+let g:PIVAutoClose = 0
+let g:DisableAutoPHPFolding = 1
+
+" Indent_Guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 4
+let g:indent_guides_enable_on_vim_startup = 1
+
 let g:gitgutter_highlight_lines = 1
