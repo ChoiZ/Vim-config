@@ -92,7 +92,8 @@ set preserveindent
 set nosi noai
 
 "set mouse=a
-set mousehide
+"set mousehide
+"set clipboard=unnamed
 "set pastetoggle=<F10>
 
 " Tab on autoindent
@@ -109,18 +110,9 @@ set softtabstop=4
 set noet|retab!
 
 " Ligne wrap
-set wrap
-set textwidth=79
+"set wrap
+"set textwidth=79
 "set formatoptions=qn1
-
-" Enable code folding, by syntax
-set foldenable
-noremap <Tab> za
-noremap <S-Tab> zA
-set foldmethod=syntax
-
-" Hide mouse on typing
-set mousehide
 
 " Define file format to utf-8
 set encoding=utf-8 nobomb
@@ -144,13 +136,7 @@ nnoremap <Leader>rc <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " Highlight To do list with green background
 highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
-highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
-highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
-
-" todolist match
 :call matchadd('Todo','[T|t][O|o][D|d][O|o]')
-:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')
-:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')
 
 " Don't destroy buffer
 set nohidden
@@ -164,27 +150,6 @@ set history=100
 " Number of undo
 set undolevels=100
 
-" Add autocomplete with <CTRL>+X and <CTRL>+N add inoremap to use <CTRL>+O
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-autocmd FileType javascript call SetJsOptions()
-function SetJsOptions()
-	set omnifunc=javascriptcomplete#CompleteJS
-	" JS Beautify
-	inoremap <C-P> <ESC>:call Jsbeautify()<CR>
-	nnoremap <C-P> :call Jsbeautify()<CR>
-	vnoremap <C-P> :call Jsbeautify()<CR>
-endfunction
-
-inoremap <C-O> <C-x><C-o>
-
-" If you want to use ctags
-let Tlist_Ctags_Cmd='/usr/bin/ctags' 
-inoremap <C-F> :TlistToggle<CR>
-nnoremap <C-F> :TlistToggle<CR>
-vnoremap <C-F> :TlistToggle<CR>
-nmap <C-G> :TagbarToggle<CR>
-
 " bépo
 noremap s :w
 noremap é w
@@ -193,7 +158,7 @@ noremap « <
 noremap » >
 
 "let g:Powerline_symbols = 'fancy'
-let g:PIVAutoClose = 0
+let g:PIVAutoClose = 1
 let g:DisableAutoPHPFolding = 1
 
 " Indent_Guides
