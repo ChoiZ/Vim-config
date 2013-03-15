@@ -1,16 +1,13 @@
 " .vimrc file 
 " Create on: 31th October 2008 for Vim 7.0.234 
-" Last edit: 12th March 2013 for Vim 7.3 
-" version: 570 
+" Last edit: 14th March 2013 for Vim 7.3 
+" version: 571 
 " by: François LASSERRE 
 " http://www.choiz.fr/
 " 
 " This file is available on my github repo: 
 " http://www.github.com/ChoiZ/Vim-config
 " 
-
-" Disable auto cmd
-autocmd!
 
 " Set nocompatible mode for vi
 set nocompatible
