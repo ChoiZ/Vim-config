@@ -7,7 +7,7 @@
 let s:foreground = "eaeaea"
 let s:background = "000000"
 let s:selection = "424242"
-let s:line = "2a2a2a"
+let s:line = "303030"
 let s:comment = "969896"
 let s:red = "d54e53"
 let s:orange = "e78c45"
@@ -17,6 +17,8 @@ let s:aqua = "70c0b1"
 let s:blue = "7aa6da"
 let s:purple = "c397d8"
 let s:window = "4d5057"
+let s:indenteven = "202020"
+let s:indentodd = "262626"
 
 set background=dark
 hi clear
@@ -236,6 +238,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("DiffDelete", s:red, s:background, "none")
 	call <SID>X("DiffAdd", s:blue, s:background, "none")
 	call <SID>X("DiffChange", s:green, s:background, "none")
+	
+	" IndentGuides
+	call <SID>X("IndentGuidesEven", s:foreground, s:indenteven, "none")
+	call <SID>X("IndentGuidesOdd", s:foreground, s:indentodd, "none")
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")

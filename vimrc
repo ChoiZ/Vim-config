@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 " .vimrc file
 " Create on: 31th October 2008 for Vim 7.0.234
 " Last edit: 16th March 2013 for Vim 7.3
@@ -7,14 +8,27 @@
 " vim: set fdm=marker:fdl=0:
 "
 " This file is available on my github repo:
+=======
+" .vimrc file 
+" Create on: 31th October 2008 for Vim 7.0.234 
+" Last edit: 14th March 2013 for Vim 7.3 
+" version: 571 
+" by: François LASSERRE 
+" http://www.choiz.fr/
+" 
+" This file is available on my github repo: 
+>>>>>>> a64522cc7daa5f8de5ee54a1fc86ca3122c0d590
 " http://www.github.com/ChoiZ/Vim-config
 "
 
+<<<<<<< HEAD
 
 " Autoreload vimrc on change
 autocmd! BufWritePost vimrc source $MYVIMRC
 autocmd! BufWritePost .vimrc source $MYVIMRC
 
+=======
+>>>>>>> a64522cc7daa5f8de5ee54a1fc86ca3122c0d590
 " Set nocompatible mode for vi
 set nocompatible
 
@@ -58,7 +72,13 @@ set t_Co=256				" The terminal supports 256 colors
 set title
 set titlestring=%f title	" Display filename in terminal window
 
+<<<<<<< HEAD
 
+=======
+" For html files set tl options
+"autocmd FileType html set formatoptions+=tl
+autocmd FileType html set formatoptions+=gmrLtTa
+>>>>>>> a64522cc7daa5f8de5ee54a1fc86ca3122c0d590
 
 " }}}
 
@@ -139,6 +159,7 @@ set colorcolumn=+0
 " Don't destroy buffer
 set nohidden
 
+<<<<<<< HEAD
 
 
 " }}}
@@ -146,12 +167,57 @@ set nohidden
 " LAYOUT {{{
 
 "" bépo
+=======
+" Ligne wrap
+"set wrap
+"set textwidth=79
+"set formatoptions=qn1
+
+" Define file format to utf-8
+set encoding=utf-8 nobomb
+set fileencoding=utf-8
+
+" Don't add empty newlines at the end of files
+set binary
+set noeol
+
+" Map Leader
+:let mapleader = ","
+nnoremap <Leader>cp yyp
+nnoremap <Leader>ft Vatzf
+nnoremap <Leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
+nnoremap <Leader>q gqip
+" spliting
+nnoremap <Leader>w <C-w>v<C-w>l
+nnoremap <Leader>h :new<cr>:e 
+" vimrc
+nnoremap <Leader>rc <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+:call matchadd('Todo','[T|t][O|o][D|d][O|o]')
+
+" Don't destroy buffer
+set nohidden
+
+" Add template for different kind of files
+autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
+
+" Number of cmd in history
+set history=100
+
+" Number of undo
+set undolevels=100
+
+" bépo
+>>>>>>> a64522cc7daa5f8de5ee54a1fc86ca3122c0d590
 noremap s :w
 noremap é w
 noremap w <C-w>
 noremap « <
 noremap » >
 
+<<<<<<< HEAD
 
 
 " }}}
@@ -159,13 +225,24 @@ noremap » >
 " PLUGINS {{{
 
 "" Indent_Guides {{{
+=======
+"let g:Powerline_symbols = 'fancy'
+let g:PIVAutoClose = 1
+let g:DisableAutoPHPFolding = 1
+
+" Indent_Guides
+>>>>>>> a64522cc7daa5f8de5ee54a1fc86ca3122c0d590
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 4
 let g:indent_guides_enable_on_vim_startup = 1
+<<<<<<< HEAD
 "" }}}
 
 "" Gitgutter {{{
+=======
+
+>>>>>>> a64522cc7daa5f8de5ee54a1fc86ca3122c0d590
 let g:gitgutter_highlight_lines = 1
 " Mapping
 nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
