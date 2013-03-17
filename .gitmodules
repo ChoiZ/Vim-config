@@ -7,12 +7,6 @@
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
-[submodule "bundle/checksyntax"]
-	path = bundle/checksyntax
-	url = git://github.com/tomtom/checksyntax_vim.git
-[submodule "bundle/PIV"]
-	path = bundle/PIV
-	url = git://github.com/spf13/PIV.git
 [submodule "bundle/indent-guides"]
 	path = bundle/indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
