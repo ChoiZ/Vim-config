@@ -85,6 +85,7 @@ set showmatch		" Show open or close bracket
 set number			" Add line number
 set ruler
 set cursorline		" View currentline
+set laststatus=2			" Always show the statusline
 
 set modeline
 
