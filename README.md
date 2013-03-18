@@ -15,6 +15,11 @@ cd ~/.vim && git submodule init && git submodule update
 CTAGS Setup:
 ===
 
+On Arch Linux:
+
+  $ su
+  # pacman -S ctags
+
 On debian / ubuntu:
 
   $ sudo apt-get install exuberant-ctags
