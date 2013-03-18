@@ -1,7 +1,7 @@
 " .vimrc file
 " Create on: 31th October 2008 for Vim 7.0.234
-" Last edit: 16th March 2013 for Vim 7.3
-" version: 572
+" Last edit: 18th March 2013 for Vim 7.3
+" version: 574
 " by: François LASSERRE
 "
 " vim: set fdm=marker:fdl=0:
