@@ -18,7 +18,6 @@ CTAGS Setup:
 On Arch Linux:
 
     $ su
-
     # pacman -S ctags
 
 On debian / ubuntu:
@@ -29,22 +28,12 @@ On debian / ubuntu:
 
 On a Mac:
 
-    $ cd ~; mkdir ctags; cd ctags
-  
+    $ cd ~ && mkdir ctags && cd ctags
     $ curl -O http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
-  
     $ tar xzvf ctags-5.8.tar.gz
-
-    $ cd ctags-5.8
-  
-    $ ./configure
-  
-    $ make
-  
-    $ sudo make install
-  
+    $ cd ctags-5.8 && ./configure
+    $ make && sudo make install
     $ sudo chmod a+r /usr/local/bin
-  
     $ sudo chmod a+x /usr/local/bin
   
   don't forget to update the path if it's different in the vimrc's file
