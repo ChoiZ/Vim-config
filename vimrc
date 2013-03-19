@@ -172,4 +172,16 @@ let g:Powerline_mode_n = ' N '
 let g:Powerline_stl_path_style = 'full'
 "" }}}
 
+"" Syntastic {{{
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+"" }}}
+
+"" PHP Doc {{{
+let g:pdv_cfg_Author = "François LASSERRE"
+let g:pdv_cfg_Copyright = "Copyright (c) Veoprint 2013 All rights reserved."
+let g:pdv_cfg_License = "{@link http://www.gnu.org/licenses/gpl-3.0.html} GPL License 3.0"
+
+"" }}}
+
 " }}}
