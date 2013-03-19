@@ -1,10 +1,11 @@
 " .vimrc file
+"
+" vim: set foldmethod=marker:
+"
 " Create on: 31th October 2008 for Vim 7.0.234
 " Last edit: 19th March 2013 for Vim 7.3
-" version: 576
+" version: 577
 " by: François LASSERRE
-"
-" vim: set fdm=marker:fdl=0:
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
@@ -20,7 +21,6 @@ set nocompatible
 " Add pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
 
 
 " Folders Settings (backup, undo…) {{{
@@ -48,8 +48,8 @@ endif
 set history=100 " Number of cmd in history
 set undolevels=100 " Number of undo
 
-
 " }}}
+
 
 " TERM Preferences {{{
 
@@ -57,8 +57,8 @@ set t_Co=256 " The terminal supports 256 colors
 set title
 set titlestring=%f title " Display filename in terminal window
 
-
 " }}}
+
 
 " FILES Preferences {{{
 
@@ -88,9 +88,10 @@ set cursorline " View currentline
 set laststatus=2 " Always show the statusline
 
 set modeline
-
+set modelines=5
 
 " }}}
+
 
 " SEARCH / BELLS ERROR {{{
 
@@ -102,8 +103,8 @@ set smartcase " case sensitive for caps on search
 set noerrorbells " No error bells
 set visualbell " Blink on error
 
-
 " }}}
+
 
 " TEXT Preferences (indent,listchars,wrap) {{{
 
@@ -136,8 +137,8 @@ set colorcolumn=+0
 " Don't destroy buffer
 set nohidden
 
-
 " }}}
+
 
 " LAYOUT {{{
 
@@ -147,8 +148,8 @@ noremap « <
 noremap » >
 "" }}}
 
-
 " }}}
+
 
 " PLUGINS {{{
 
