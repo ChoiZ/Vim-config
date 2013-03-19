@@ -1,7 +1,7 @@
 " .vimrc file
 " Create on: 31th October 2008 for Vim 7.0.234
 " Last edit: 19th March 2013 for Vim 7.3
-" version: 575
+" version: 576
 " by: François LASSERRE
 "
 " vim: set fdm=marker:fdl=0:
@@ -45,17 +45,17 @@ else
 	endif
 endif
 
-set history=100		" Number of cmd in history
-set undolevels=100	" Number of undo
+set history=100 " Number of cmd in history
+set undolevels=100 " Number of undo
 
 
 " }}}
 
 " TERM Preferences {{{
 
-set t_Co=256				" The terminal supports 256 colors
+set t_Co=256 " The terminal supports 256 colors
 set title
-set titlestring=%f title	" Display filename in terminal window
+set titlestring=%f title " Display filename in terminal window
 
 
 " }}}
@@ -73,7 +73,7 @@ filetype plugin on
 set encoding=utf-8 nobomb
 set fileencoding=utf-8
 set binary
-set noeol					" Don't add empty newlines at the end of files
+set noeol " Don't add empty newlines at the end of files
 
 " colors: font, background and colorscheme
 set guifont=Monaco:h10
@@ -81,11 +81,11 @@ set background=dark
 colorscheme Tomorrow-Night-Bright
 
 set showcmd
-set showmatch		" Show open or close bracket
-set number			" Add line number
+set showmatch " Show open or close bracket
+set number " Add line number
 set ruler
-set cursorline		" View currentline
-set laststatus=2			" Always show the statusline
+set cursorline " View currentline
+set laststatus=2 " Always show the statusline
 
 set modeline
 
@@ -94,12 +94,13 @@ set modeline
 
 " SEARCH / BELLS ERROR {{{
 
-set hlsearch		" highlight search
-set ignorecase		" case insensitive on search
-set smartcase		" case sensitive for caps on search (/the return The, the... /The return only The)
+set hlsearch " highlight search
+set ignorecase " case insensitive on search
+set smartcase " case sensitive for caps on search
+	"(/the return The, the... /The return only The)
 
-set noerrorbells	" No error bells
-set visualbell		" Blink on error
+set noerrorbells " No error bells
+set visualbell " Blink on error
 
 
 " }}}
@@ -107,11 +108,11 @@ set visualbell		" Blink on error
 " TEXT Preferences (indent,listchars,wrap) {{{
 
 set preserveindent
-set tabstop=4		" 1 Tab = 4 spaces
-set shiftwidth=4	" Tab on autoindent
-"set shiftround		" Round
+set tabstop=4 " 1 Tab = 4 spaces
+set shiftwidth=4 " Tab on autoindent
+"set shiftround " Round
 set softtabstop=4
-set noet|retab!		" Set no expandtab retab
+set noet|retab! " Set no expandtab retab
 "set et
 set cindent
 set smartindent
@@ -140,12 +141,11 @@ set nohidden
 
 " LAYOUT {{{
 
-" bépo
-noremap s :w
-noremap é w
-noremap w <C-w>
+"" bépo {{{
+noremap s :w<CR>
 noremap « <
 noremap » >
+"" }}}
 
 
 " }}}
