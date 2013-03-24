@@ -5,7 +5,7 @@ SETUP :
 
 To setup on your system, open a terminal and paste the following code.
 
-git clone https://github.com/ChoiZ/Vim-config ~/.vim
+git clone https://github.com/ChoiZ/Vim-config.git ~/.vim
 
 ln -s ~/.vim/vimrc ~/.vimrc
 
