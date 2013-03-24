@@ -1,7 +1,7 @@
-Last modified: 2013-03-19
-
 SETUP :
 =======
+
+You must at less have vim 7.3.
 
 To setup on your system, open a terminal and paste the following code.
 
