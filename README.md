@@ -1,40 +1,45 @@
-SETUP :
-=======
+<h1>SETUP:</h1>
 
 You must at less have vim 7.3.
 
 To setup on your system, open a terminal and paste the following code.
 
+```bash
 git clone git://github.com/ChoiZ/Vim-config.git ~/.vim
 
 ln -s ~/.vim/vimrc ~/.vimrc
 
 cd ~/.vim && git submodule init && git submodule update
+```
+
+<h1>CTAGS Setup:</h1>
 
 
-CTAGS Setup:
-===
+<h2>On Linux</h2>
 
-On Arch Linux:
+<h3>Arch Linux</h3>
 
-    $ su
-    # pacman -S ctags
+```bash
+su
+pacman -S ctags
+```
 
-On debian / ubuntu:
+<h3>Debian / Ubuntu</h3>
 
-    $ sudo apt-get install exuberant-ctags
-  
-  don't forget to update the path if it's different in the vimrc's file
+```bash
+sudo apt-get install exuberant-ctags
+```  
 
-On a Mac:
+<h2>On Mac</h2>
 
-    $ cd ~ && mkdir ctags && cd ctags
-    $ curl -O http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
-    $ tar xzvf ctags-5.8.tar.gz
-    $ cd ctags-5.8 && ./configure
-    $ make && sudo make install
-    $ sudo chmod a+r /usr/local/bin
-    $ sudo chmod a+x /usr/local/bin
-  
-  don't forget to update the path if it's different in the vimrc's file
+```bash
+cd ~ && mkdir ctags && cd ctags
+curl -O http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+tar -xzvf ctags-5.8.tar.gz
+cd ctags-5.8 && ./configure
+make && sudo make install
+sudo chmod a+r /usr/local/bin
+sudo chmod a+x /usr/local/bin
+```
 
+don't forget to update the path if it's different in the vimrc's file
