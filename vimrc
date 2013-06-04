@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Create on: 31th October 2008 for Vim 7.0.234
-" Last edit: 19th March 2013 for Vim 7.3
-" version: 577
+" Last edit: 4th June 2013 for Vim 7.3
+" version: 578
 " by: François LASSERRE
 "
 " This file is available on my github repo:
@@ -108,19 +108,17 @@ set visualbell " Blink on error
 
 " TEXT Preferences (indent,listchars,wrap) {{{
 
-set preserveindent
+"set preserveindent
 set tabstop=4 " 1 Tab = 4 spaces
 set shiftwidth=4 " Tab on autoindent
-"set shiftround " Round
 set softtabstop=4
-set noet|retab! " Set no expandtab retab
-"set et
+"set noet|retab! " Set no expandtab retab
+set expandtab
 set cindent
 set smartindent
 "set autoindent
 
-"set listchars=nbsp:¤,tab:··,trail:¤,extends:>,precedes:<
-set listchars=tab:\ \ ,trail:¤,extends:>,precedes:<
+set listchars=tab:\ \ ,trail:¤,extends:>,precedes:<,nbsp:¬
 set list
 set backspace=indent,eol,start
 
