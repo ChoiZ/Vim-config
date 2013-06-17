@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Create on: 31th October 2008 for Vim 7.0.234
-" Last edit: 4th June 2013 for Vim 7.3
-" version: 578
+" Last edit: 17th June 2013 for Vim 7.3
+" version: 579
 " by: François LASSERRE
 "
 " This file is available on my github repo:
