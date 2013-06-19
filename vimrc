@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Create on: 31th October 2008 for Vim 7.0.234
-" Last edit: 17th June 2013 for Vim 7.3
-" version: 579
+" Last edit: 19th June 2013 for Vim 7.3
+" version: 580
 " by: François LASSERRE
 "
 " This file is available on my github repo:
@@ -144,6 +144,10 @@ set nohidden
 noremap s :w<CR>
 noremap « <
 noremap » >
+"" }}}
+
+"" Clear Search {{{
+noremap <F2> :let @/ = ""<CR>
 "" }}}
 
 " }}}
