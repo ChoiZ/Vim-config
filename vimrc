@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Create on: 31th October 2008 for Vim 7.0.234
-" Last edit: 19th June 2013 for Vim 7.3
-" version: 580
+" Last edit: 4th July 2013 for Vim 7.3
+" version: 581
 " by: François LASSERRE
 "
 " This file is available on my github repo:
@@ -186,3 +186,18 @@ let g:pdv_cfg_Copyright = "Copyright (c) Veoprint 2013 All rights reserved."
 "" }}}
 
 " }}}
+
+function! <SID>StripTrailingWhitespace()
+    " preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+nmap <silent> <Leader><enter> :%s/^\(\s*\n\)\+/\r<CR>
