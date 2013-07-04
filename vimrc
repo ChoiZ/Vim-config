@@ -199,5 +199,5 @@ function! <SID>StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 
-nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
-nmap <silent> <Leader><enter> :%s/^\(\s*\n\)\+/\r<CR>
+nmap <silent> <F3> :call <SID>StripTrailingWhitespace()<CR>
+nmap <silent> <F4> :%s/^\(\s*\n\)\+/\r<CR>
