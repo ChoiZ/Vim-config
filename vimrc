@@ -178,10 +178,11 @@ let g:Powerline_stl_path_style = 'full'
 "" Syntastic {{{
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+let g:syntastic_js_checkers=['jshint']
 "" }}}
 
 "" PHP Doc {{{
-let g:pdv_cfg_Author = "François LASSERRE <flasserre@veoprint.com>"
+let g:pdv_cfg_Author = "François LASSERRE"
 let g:pdv_cfg_Copyright = "Copyright (c) Veoprint 2013 All rights reserved."
 "" }}}
 
