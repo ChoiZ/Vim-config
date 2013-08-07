@@ -35,14 +35,16 @@ else
 	endif
 endif
 
-set undofile
-if filewritable(expand("~/.vim/undodir")) == 2
-	set undodir=~/.vim/undodir
-else
-	if has("unix") || has("win32unix")
-		call system("mkdir $HOME/.vim/undodir -p")
-		set undodir=~/.vim/undodir
-	endif
+if version >= 703
+    set undofile
+    if filewritable(expand("~/.vim/undodir")) == 2
+        set undodir=~/.vim/undodir
+    else
+        if has("unix") || has("win32unix")
+            call system("mkdir $HOME/.vim/undodir -p")
+            set undodir=~/.vim/undodir
+        endif
+    endif
 endif
 
 set history=100 " Number of cmd in history
@@ -124,7 +126,9 @@ set backspace=indent,eol,start
 
 "set textwidth=80
 set nowrap
-set colorcolumn=+0
+if version >= 703
+    set colorcolumn=+0
+endif
 "set formatoptions=qn1
 
 "set mouse=a
