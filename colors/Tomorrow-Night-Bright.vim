@@ -8,6 +8,7 @@ let s:foreground = "eaeaea"
 let s:background = "000000"
 let s:selection = "424242"
 let s:line = "303030"
+let s:cursorline = "555555"
 let s:comment = "969896"
 let s:red = "d54e53"
 let s:orange = "e78c45"
@@ -263,7 +264,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
 	if version >= 700
-		call <SID>X("CursorLine", "", s:line, "none")
+		call <SID>X("CursorLine", "", s:cursorline, "none")
 		call <SID>X("CursorColumn", "", s:line, "none")
 		call <SID>X("PMenu", s:foreground, s:selection, "none")
 		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
