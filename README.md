@@ -33,6 +33,10 @@ sudo apt-get install exuberant-ctags
 <h2>On Mac</h2>
 
 ```bash
+brew install ctags
+```
+
+```bash
 cd ~ && mkdir ctags && cd ctags
 curl -O http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
 tar -xzvf ctags-5.8.tar.gz
