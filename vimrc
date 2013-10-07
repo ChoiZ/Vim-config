@@ -4,7 +4,7 @@
 "
 " Create on: 31th October 2008
 " Last edit: 7th October 2013
-" version: 582
+" version: 583
 " by: François LASSERRE
 "
 " This file is available on my github repo:
@@ -23,17 +23,10 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 
-" Folders Settings (backup, undo…) {{{
+" Backup - Swap Settings (undo file, levels, history…) {{{
 
-set backup
-if filewritable(expand("~/.vim/backup")) == 2
-	set backupdir=~/.vim/backup
-else
-	if has("unix") || has("win32unix")
-		call system("mkdir $HOME/.vim/backup -p")
-		set backupdir=~/.vim/backup
-	endif
-endif
+set nobackup
+set noswapfile
 
 if version >= 703
     set undofile
