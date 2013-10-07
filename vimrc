@@ -47,17 +47,17 @@ if version >= 703
     endif
 endif
 
-set history=100 " Number of cmd in history
-set undolevels=100 " Number of undo
+set history=100			" Number of cmd in history
+set undolevels=100		" Number of undo
 
 " }}}
 
 
 " TERM Preferences {{{
 
-set t_Co=256 " The terminal supports 256 colors
+set t_Co=256			" The terminal supports 256 colors
 set title
-set titlestring=%f title " Display filename in terminal window
+set titlestring=%f title	" Display filename in terminal window
 
 " }}}
 
