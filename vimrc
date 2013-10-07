@@ -2,9 +2,9 @@
 "
 " vim: set foldmethod=marker:
 "
-" Create on: 31th October 2008 for Vim 7.0.234
-" Last edit: 4th July 2013 for Vim 7.3
-" version: 581
+" Create on: 31th October 2008
+" Last edit: 7th October 2013
+" version: 582
 " by: François LASSERRE
 "
 " This file is available on my github repo:
