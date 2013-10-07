@@ -28,7 +28,7 @@ pacman -S ctags
 
 ```bash
 sudo apt-get install exuberant-ctags
-```  
+```
 
 <h2>On Mac</h2>
 
