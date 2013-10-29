@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Create on: 31th October 2008
-" Last edit: 7th October 2013
-" version: 583
+" Last edit: 29th October 2013
+" version: 584
 " by: François LASSERRE
 "
 " This file is available on my github repo:
@@ -17,6 +17,9 @@ autocmd! BufWritePost .vimrc source $MYVIMRC
 
 " Set nocompatible mode for vi
 set nocompatible
+
+" Resize splits when the window is resized: http://vimbits.com/bits/223
+au VimResized * exe "normal! \<c-w>="
 
 " Add pathogen
 call pathogen#runtime_append_all_bundles()
@@ -63,6 +66,9 @@ syntax on
 " Set filetype
 filetype on
 filetype plugin on
+
+" Show Git diff in window split when commiting: http://vimbits.com/bits/173
+autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
 
 " Define file format to utf-8
 set encoding=utf-8 nobomb	" No Byte Order Mark!
@@ -127,7 +133,7 @@ endif
 "set mouse=a
 "set mousehide
 "set clipboard=unnamed
-"set pastetoggle=<F10>
+set pastetoggle=<F10>
 
 " Don't destroy buffer
 set nohidden
@@ -184,6 +190,9 @@ let g:pdv_cfg_Copyright = "Copyright (c) Veoprint 2013 All rights reserved."
 "" }}}
 
 " }}}
+
+" Highlight trailing spaces: http://vimbits.com/bits/478
+match Error /\s\+$/
 
 function! <SID>StripTrailingWhitespace()
     " preparation: save last search, and cursor position.
