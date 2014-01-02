@@ -4,7 +4,7 @@
 "
 " Create on: 31th October 2008
 " Last edit: 2nd January 2014
-" version: 585
+" version: 586
 " by: François LASSERRE
 "
 " This file is available on my github repo:
@@ -37,7 +37,7 @@ if version >= 703
         set undodir=~/.vim/undodir
     else
         if has("unix") || has("win32unix")
-            call system("mkdir $HOME/.vim/undodir -p")
+            call system("mkdir $HOME/.vim/undodir")
             set undodir=~/.vim/undodir
         endif
     endif
@@ -186,7 +186,8 @@ let g:syntastic_js_checkers=['jshint']
 
 "" PHP Doc {{{
 let g:pdv_cfg_Author = "François LASSERRE"
-let g:pdv_cfg_Copyright = "Copyright (c) Veoprint 2014 All rights reserved."
+let g:pdv_cfg_Copyright = "Copyright (c) Veoprint ".strftime("%Y")." All rights reserved."
+let curpwd=system('pwd')
 "" }}}
 
 " }}}
