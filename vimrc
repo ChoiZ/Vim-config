@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Create on: 31th October 2008
-" Last edit: 29th October 2013
-" version: 584
+" Last edit: 2nd January 2014
+" version: 585
 " by: François LASSERRE
 "
 " This file is available on my github repo:
@@ -186,7 +186,7 @@ let g:syntastic_js_checkers=['jshint']
 
 "" PHP Doc {{{
 let g:pdv_cfg_Author = "François LASSERRE"
-let g:pdv_cfg_Copyright = "Copyright (c) Veoprint 2013 All rights reserved."
+let g:pdv_cfg_Copyright = "Copyright (c) Veoprint 2014 All rights reserved."
 "" }}}
 
 " }}}
