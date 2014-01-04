@@ -12,8 +12,8 @@
 "
 
 " Autoreload vimrc on change
-autocmd! BufWritePost vimrc source $MYVIMRC
-autocmd! BufWritePost .vimrc source $MYVIMRC
+"autocmd! BufWritePost vimrc source $MYVIMRC
+"autocmd! BufWritePost .vimrc source $MYVIMRC
 
 " Set nocompatible mode for vi
 set nocompatible
@@ -33,12 +33,12 @@ set noswapfile
 
 if version >= 703
     set undofile
-    if filewritable(expand("~/.vim/undodir")) == 2
-        set undodir=~/.vim/undodir
+    if filewritable(expand("~/.vimundodir")) == 2
+        set undodir=~/.vimundodir
     else
         if has("unix") || has("win32unix")
-            call system("mkdir $HOME/.vim/undodir")
-            set undodir=~/.vim/undodir
+            call system("mkdir $HOME/.vimundodir")
+            set undodir=~/.vimundodir
         endif
     endif
 endif
@@ -60,12 +60,14 @@ set titlestring=%f title	" Display filename in terminal window
 
 " FILES Preferences {{{
 
+" Set filetype
+filetype plugin indent on
+
 " Set syntax highlighting
 syntax on
 
-" Set filetype
-filetype on
-filetype plugin on
+set mouse=a
+set mousehide
 
 " Show Git diff in window split when commiting: http://vimbits.com/bits/173
 autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
@@ -158,18 +160,49 @@ noremap <F2> :let @/ = ""<CR>
 
 " PLUGINS {{{
 
+"" Neocomplcache {{{
+let g:neocomplcache_enable_at_startup = 1
+
+let g:neocomplcache_temporary_dir = $VIM_DIR.'/tmp/neocomplcache'
+
+"" }}}
+
+"" neosnippet {{{
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+"" }}}
+
+"" vim-snipmate {{{
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+"" }}}
+
 "" Indent_Guides {{{
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 4
 let g:indent_guides_enable_on_vim_startup = 1
-"" }}}
-
-"" Gitgutter {{{
-let g:gitgutter_highlight_lines = 1
-" Mapping
-nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
-nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
 "" }}}
 
 "" Powerline {{{
