@@ -1,6 +1,6 @@
 <h1>SETUP:</h1>
 
-You must at less have vim 7.3. (check in vim with :version or with bash vim --version)
+You must at less have vim 7.4. (check in vim with :version or with bash vim --version)
 
 To setup on your system, open a terminal and paste the following code.
 
@@ -45,5 +45,3 @@ make && sudo make install
 sudo chmod a+r /usr/local/bin
 sudo chmod a+x /usr/local/bin
 ```
-
-don't forget to update the path if it's different in the vimrc's file

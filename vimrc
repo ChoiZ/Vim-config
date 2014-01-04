@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Create on: 31th October 2008
-" Last edit: 2nd January 2014
-" version: 586
+" Last edit: 4nd January 2014
+" version: 587
 " by: François LASSERRE
 "
 " This file is available on my github repo:
@@ -214,7 +214,7 @@ let g:Powerline_stl_path_style = 'full'
 "" Syntastic {{{
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
-let g:syntastic_js_checkers=['jshint']
+let g:syntastic_javascript_checkers=['jshint']
 "" }}}
 
 "" PHP Doc {{{
