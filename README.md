@@ -9,5 +9,7 @@ git clone git://github.com/ChoiZ/Vim-config.git ~/.vim
 
 ln -s ~/.vim/vimrc ~/.vimrc
 
-cd ~/.vim && git submodule init && git submodule update
+cd ~/.vim && git checkout newrelease
+
+git submodule init && git submodule update
 ```
