@@ -1,4 +1,4 @@
-<h1>SETUP:</h1>
+# SETUP:
 
 You must at less have vim 7.4. (check in vim with :version or with bash vim --version)
 
@@ -10,38 +10,4 @@ git clone git://github.com/ChoiZ/Vim-config.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
 cd ~/.vim && git submodule init && git submodule update
-```
-
-<h1>CTAGS Setup:</h1>
-
-
-<h2>On Linux</h2>
-
-<h3>Arch Linux</h3>
-
-```bash
-su
-pacman -S ctags
-```
-
-<h3>Debian / Ubuntu</h3>
-
-```bash
-sudo apt-get install exuberant-ctags
-```
-
-<h2>On Mac</h2>
-
-```bash
-brew install ctags
-```
-
-```bash
-cd ~ && mkdir ctags && cd ctags
-curl -O http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
-tar -xzvf ctags-5.8.tar.gz
-cd ctags-5.8 && ./configure
-make && sudo make install
-sudo chmod a+r /usr/local/bin
-sudo chmod a+x /usr/local/bin
 ```
