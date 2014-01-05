@@ -15,43 +15,43 @@
 	url = git://github.com/ChoiZ/PIV.git
 [submodule "bundle/HTML-AutoCloseTag"]
 	path = bundle/HTML-AutoCloseTag
-	url = git@github.com:ChoiZ/HTML-AutoCloseTag.git
+	url = git://github.com:ChoiZ/HTML-AutoCloseTag.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
-	url = git@github.com:ChoiZ/taglist.vim.git
+	url = git://github.com:ChoiZ/taglist.vim.git
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
-	url = git@github.com:ChoiZ/neocomplcache.vim.git
+	url = git://github.com:ChoiZ/neocomplcache.vim.git
 [submodule "bundle/neosnippet"]
 	path = bundle/neosnippet
-	url = git@github.com:ChoiZ/neosnippet.vim.git
+	url = git://github.com:ChoiZ/neosnippet.vim.git
 [submodule "bundle/vim-css3-syntax"]
 	path = bundle/vim-css3-syntax
-	url = git@github.com:ChoiZ/vim-css3-syntax.git
+	url = git://github.com:ChoiZ/vim-css3-syntax.git
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
-	url = git@github.com:ChoiZ/vim-javascript.git
+	url = git://github.com:ChoiZ/vim-javascript.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
-	url = git@github.com:ChoiZ/vim-less.git
+	url = git://github.com:ChoiZ/vim-less.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = git@github.com:ChoiZ/ctrlp.vim.git
+	url = git://github.com:ChoiZ/ctrlp.vim.git
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
-	url = git@github.com:ChoiZ/vim-markdown.git
+	url = git://github.com:ChoiZ/vim-markdown.git
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
-	url = git@github.com:ChoiZ/vim-multiple-cursors.git
+	url = git://github.com:ChoiZ/vim-multiple-cursors.git
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
-	url = git@github.com:ChoiZ/vim-snippets.git
+	url = git://github.com:ChoiZ/vim-snippets.git
 [submodule "bundle/vim-signify"]
 	path = bundle/vim-signify
-	url = git@github.com:ChoiZ/vim-signify.git
+	url = git://github.com:ChoiZ/vim-signify.git
 [submodule "bundle/vim-tomorrow-night"]
 	path = bundle/vim-tomorrow-night
-	url = git@github.com:ChoiZ/vim-tomorrow-night.git
+	url = git://github.com:ChoiZ/vim-tomorrow-night.git
 [submodule "bundle/neocomplete.vim"]
 	path = bundle/neocomplete.vim
-	url = git@github.com:ChoiZ/neocomplete.vim.git
+	url = git://github.com:ChoiZ/neocomplete.vim.git
