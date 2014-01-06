@@ -146,13 +146,8 @@ set nohidden
 " LAYOUT {{{
 
 "" bépo {{{
-noremap s :w<CR>
 noremap « <
 noremap » >
-"" }}}
-
-"" Clear Search {{{
-noremap <F2> :let @/ = ""<CR>
 "" }}}
 
 " }}}
@@ -235,10 +230,39 @@ function! <SID>StripTrailingWhitespace()
     let c = col(".")
     " Do the business:
     %s/\s\+$//e
+    %s///e
     " clean up: restore previous search history, and cursor position
     let @/=_s
     call cursor(l, c)
 endfunction
 
-nmap <silent> <F3> :call <SID>StripTrailingWhitespace()<CR>
-nmap <silent> <F4> :%s/^\(\s*\n\)\+/\r<CR>
+noremap <F2> :let @/ = ""<CR>
+noremap <silent> <F3> :call <SID>StripTrailingWhitespace()<CR>
+
+" next fold
+inoremap <F4> <C-O>zj
+nnoremap <F4> zj
+onoremap <F4> <C-C>zj
+
+" previous fold
+inoremap <F5> <C-O>zk
+nnoremap <F5> zk
+onoremap <F5> <C-C>zk
+
+" open/close fold
+inoremap <F6> <C-O>za
+nnoremap <F6> za
+onoremap <F6> <C-C>za
+vnoremap <F6> zf
+
+" open all
+inoremap <F7> <C-O>zR
+nnoremap <F7> zR
+onoremap <F7> <C-C>zR
+
+" close all
+inoremap <F8> <C-O>zM
+nnoremap <F8> zM
+onoremap <F8> <C-C>zM
+
+"noremap <silent> <F4> :%s/^\(\s*\n\)\+/\r<CR>
