@@ -1,6 +1,6 @@
-<h1>SETUP:</h1>
+# SETUP:
 
-You must at less have vim 7.3. (check in vim with :version or with bash vim --version)
+You must at least have vim 7.3. (check in vim with :version or with bash vim --version)
 
 To setup on your system, open a terminal and paste the following code.
 
@@ -12,25 +12,24 @@ ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim && git submodule init && git submodule update
 ```
 
-<h1>CTAGS Setup:</h1>
+# CTAGS Setup:
 
+## On Linux
 
-<h2>On Linux</h2>
-
-<h3>Arch Linux</h3>
+### Arch Linux
 
 ```bash
 su
 pacman -S ctags
 ```
 
-<h3>Debian / Ubuntu</h3>
+### Debian / Ubuntu
 
 ```bash
 sudo apt-get install exuberant-ctags
 ```
 
-<h2>On Mac</h2>
+## On Mac
 
 ```bash
 brew install ctags
@@ -45,5 +44,3 @@ make && sudo make install
 sudo chmod a+r /usr/local/bin
 sudo chmod a+x /usr/local/bin
 ```
-
-don't forget to update the path if it's different in the vimrc's file
