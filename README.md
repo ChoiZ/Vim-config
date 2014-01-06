@@ -1,6 +1,6 @@
 # SETUP:
 
-You must at less have vim 7.4. (check in vim with :version or with bash vim --version)
+You must at least have vim 7.4. (check in vim with :version or with bash vim --version)
 
 To setup on your system, open a terminal and paste the following code.
 
