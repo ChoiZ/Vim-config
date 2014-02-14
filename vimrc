@@ -65,9 +65,8 @@ filetype plugin indent on
 
 " Set syntax highlighting
 syntax on
-
-set mouse=a
-set mousehide
+" for veoprint lib…
+au BufRead,BufNewFile *.lib set filetype=php
 
 " Show Git diff in window split when commiting: http://vimbits.com/bits/173
 autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
@@ -89,6 +88,7 @@ set number			" Add line number
 set ruler
 set cursorline			" View currentline
 set laststatus=2		" Always show the statusline
+set foldcolumn=2
 
 set modeline
 set modelines=5
@@ -132,9 +132,9 @@ if version >= 703
 endif
 "set formatoptions=qn1
 
-"set mouse=a
-"set mousehide
-"set clipboard=unnamed
+set mouse=a
+set mousehide
+set clipboard+=unnamed
 set pastetoggle=<F10>
 
 " Don't destroy buffer
@@ -239,15 +239,19 @@ endfunction
 noremap <F2> :let @/ = ""<CR>
 noremap <silent> <F3> :call <SID>StripTrailingWhitespace()<CR>
 
-" next fold
-inoremap <F4> <C-O>zj
-nnoremap <F4> zj
-onoremap <F4> <C-C>zj
+"vmap <D-c> "*y
+"imap <D-v> <ESC>"*gPa
+"nmap <D-v> "*gP
 
 " previous fold
-inoremap <F5> <C-O>zk
-nnoremap <F5> zk
-onoremap <F5> <C-C>zk
+inoremap <F4> <C-O>zk
+nnoremap <F4> zk
+onoremap <F4> <C-C>zk
+
+" next fold
+inoremap <F5> <C-O>zj
+nnoremap <F5> zj
+onoremap <F5> <C-C>zj
 
 " open/close fold
 inoremap <F6> <C-O>za
@@ -272,13 +276,16 @@ function! ToggleFocusMode()
         set numberwidth=10
         set foldcolumn=12
         set noruler
-        hi FoldColumn ctermbg=none
-        hi LineNr ctermfg=0 ctermbg=none
+        hi IndentGuidesEven guifg=none ctermbg=none
+        hi IndentGuidesOdd guifg=none ctermbg=none
+        hi CursorLine guifg=none ctermbg=none
+        hi FoldColumn guifg=none ctermbg=none
+        hi LineNr guifg=none ctermbg=none
         hi NonText ctermfg=0
     else
         set laststatus=2
         set numberwidth=4
-        set foldcolumn=0
+        set foldcolumn=2
         set ruler
         execute 'colorscheme ' . g:colors_name
     endif
@@ -286,3 +293,11 @@ endfunc
 nnoremap <F9> :call ToggleFocusMode()<cr>
 
 "noremap <silent> <F4> :%s/^\(\s*\n\)\+/\r<CR>
+
+" Search $_a-Z or $client_first_Name…
+" \$\C\(\<\u[a-z0-9]\+\|[a-z0-9_]\+\)\(\u\)
+" noremap <F4> :let @/ = \$\C\(\<\u[a-z0-9]\+\|[a-z0-9_]\+\)\(\u\)<CR>
+
+" CamelCase to under_scores
+" %s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#gc
+" noremap <F5> :%s/\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)/\l\1_\l\2/gc<CR>
