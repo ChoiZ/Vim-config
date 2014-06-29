@@ -20,6 +20,8 @@ set nocompatible
 
 " Resize splits when the window is resized: http://vimbits.com/bits/223
 au VimResized * exe "normal! \<c-w>="
+au InsertEnter * set paste
+au InsertLeave * set nopaste
 
 " Add pathogen
 call pathogen#runtime_append_all_bundles()
