@@ -239,7 +239,10 @@ function! <SID>StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 
+" CTRL + U: Upercase first char of the line http://vimbits.com/bits/505
+nnoremap <C-U> :%s/^./\u&/g<CR>
 noremap <F2> :let @/ = ""<CR>
+" Remove whitespace
 noremap <silent> <F3> :call <SID>StripTrailingWhitespace()<CR>
 
 "vmap <D-c> "*y
