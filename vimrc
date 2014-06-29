@@ -69,6 +69,7 @@ filetype plugin indent on
 syntax on
 " for veoprint lib…
 au BufRead,BufNewFile *.lib set filetype=php
+autocmd VimEnter COMMIT_EDITMSG setlocal filetype=gitcommit
 
 " Show Git diff in window split when commiting: http://vimbits.com/bits/173
 autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
