@@ -215,9 +215,9 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_javascript_checkers=['jshint']
 "" }}}
 
-"" PHP Doc {{{
+"" PHP Doc {{{
 let g:pdv_cfg_Author = "François LASSERRE"
-let g:pdv_cfg_Copyright = "Copyright (c) Veoprint ".strftime("%Y")." All rights reserved."
+let g:pdv_cfg_Copyright = "Copyright (c) François LASSERRE ".strftime("%Y")." All rights reserved."
 let curpwd=system('pwd')
 "" }}}
 
