@@ -58,3 +58,6 @@
 [submodule "bundle/vim-twig"]
 	path = bundle/vim-twig
 	url = https://github.com/ChoiZ/vim-twig
+[submodule "bundle/P4"]
+	path = bundle/P4
+	url = https://github.com/spf13/PIV.git
