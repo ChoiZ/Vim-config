@@ -184,6 +184,7 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
 
