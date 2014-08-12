@@ -204,10 +204,18 @@ let g:indent_guides_guide_size = 4
 let g:indent_guides_enable_on_vim_startup = 1
 "" }}}
 
-"" Powerline {{{
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_mode_n = ' N '
-let g:Powerline_stl_path_style = 'full'
+"" Airline {{{
+let g:airline_powerline_fonts = 1
+let g:airline_enable_branch = 1
+let g:airline_enable_syntastic = 1
+" vim-powerline symbols
+let g:airline_left_sep          = '⮀'
+let g:airline_left_alt_sep      = '⮁'
+let g:airline_right_sep         = '⮂'
+let g:airline_right_alt_sep     = '⮃'
+let g:airline_branch_prefix     = '⭠'
+let g:airline_readonly_symbol   = '⭤'
+let g:airline_linecolumn_prefix = '⭡'
 "" }}}
 
 "" Syntastic {{{

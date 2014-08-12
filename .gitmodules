@@ -58,3 +58,6 @@
 [submodule "bundle/PIV"]
 	path = bundle/PIV
 	url = https://github.com/spf13/PIV.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline
