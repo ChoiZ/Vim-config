@@ -3,13 +3,16 @@
 " vim: set foldmethod=marker:
 "
 " Create on: 31th October 2008
-" Last edit: 4nd January 2014
-" version: 587
+" Last edit: 23th May 2015
+" version: 588
 " by: François LASSERRE
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
 "
+
+" Remove Thanks for Flying Vim
+let &titleold=getcwd()
 
 " Autoreload vimrc on change
 "autocmd! BufWritePost vimrc source $MYVIMRC
@@ -242,7 +245,8 @@ function! <SID>StripTrailingWhitespace()
     let c = col(".")
     " Do the business:
     %s/\s\+$//e
-    %s///e
+    %s/
+//e
     " clean up: restore previous search history, and cursor position
     let @/=_s
     call cursor(l, c)
