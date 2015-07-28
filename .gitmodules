@@ -57,4 +57,4 @@
 	url = https://github.com/bling/vim-airline
 [submodule "bundle/php-namespace"]
 	path = bundle/php-namespace
-	url = git://github.com/arnaud-lb/vim-php-namespace.git
+	url = https://github.com/arnaud-lb/vim-php-namespace.git
