@@ -11,9 +11,10 @@ git clone https://github.com/ChoiZ/Vim-config.git ~/.vim
 
 ln -s ~/.vim/vimrc ~/.vimrc
 
-cd ~/.vim && git checkout develop
+cd ~/.vim && git submodule update --init
+```
 
-git submodule init && git submodule update
-
+Debian/Ubuntu:
+```bash
 sudo apt-get install ctags
 ```
