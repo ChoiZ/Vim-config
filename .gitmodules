@@ -7,21 +7,12 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/HTML-AutoCloseTag"]
-	path = bundle/HTML-AutoCloseTag
-	url = https://github.com/ChoiZ/HTML-AutoCloseTag.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/ChoiZ/taglist.vim.git
-[submodule "bundle/ctrlp"]
-	path = bundle/ctrlp
-	url = https://github.com/ChoiZ/ctrlp.vim.git
 [submodule "bundle/vim-tomorrow-night"]
 	path = bundle/vim-tomorrow-night
 	url = https://github.com/ChoiZ/vim-tomorrow-night.git
-[submodule "bundle/neocomplete.vim"]
-	path = bundle/neocomplete.vim
-	url = https://github.com/ChoiZ/neocomplete.vim.git
 [submodule "bundle/PIV"]
 	path = bundle/PIV
 	url = https://github.com/spf13/PIV.git
