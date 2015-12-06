@@ -2,21 +2,15 @@
 "
 " vim: set foldmethod=marker:
 "
-" Create on: 31th October 2008
-" Last edit: 23th May 2015
-" version: 588
-" by: François LASSERRE
+" Created on: 31th October 2008
+" Edited on: 6th December 2015
+" Version #: 590
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
-"
 
 " Remove Thanks for Flying Vim
 let &titleold=getcwd()
-
-" Autoreload vimrc on change
-"autocmd! BufWritePost vimrc source $MYVIMRC
-"autocmd! BufWritePost .vimrc source $MYVIMRC
 
 " Set nocompatible mode for vi
 set nocompatible
