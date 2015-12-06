@@ -22,9 +22,6 @@
 [submodule "bundle/neocomplete.vim"]
 	path = bundle/neocomplete.vim
 	url = https://github.com/ChoiZ/neocomplete.vim.git
-[submodule "bundle/vim-twig"]
-	path = bundle/vim-twig
-	url = https://github.com/ChoiZ/vim-twig
 [submodule "bundle/PIV"]
 	path = bundle/PIV
 	url = https://github.com/spf13/PIV.git
