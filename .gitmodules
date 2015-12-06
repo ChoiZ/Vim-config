@@ -13,9 +13,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/ChoiZ/taglist.vim.git
-[submodule "bundle/neocomplcache"]
-	path = bundle/neocomplcache
-	url = https://github.com/ChoiZ/neocomplcache.vim.git
 [submodule "bundle/neosnippet"]
 	path = bundle/neosnippet
 	url = https://github.com/ChoiZ/neosnippet.vim.git
@@ -64,3 +61,6 @@
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "bundle/neocomplcache.vim"]
+	path = bundle/neocomplcache.vim
+	url = https://github.com/Shougo/neocomplcache.vim
