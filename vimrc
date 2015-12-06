@@ -84,7 +84,7 @@ set binary
 set noeol			" Don't add empty newlines at the end of files
 
 " colors: font, background and colorscheme
-set guifont=Monaco:h10
+set guifont="Monaco for Powerline":h10
 set background=dark
 colorscheme Tomorrow-Night-Bright
 
@@ -121,6 +121,8 @@ set visualbell			" Blink on error
 set tabstop=4			" 1 Tab = 4 spaces
 set shiftwidth=4		" Tab on autoindent
 set softtabstop=4
+set textwidth=80
+set wrapmargin=2
 "set noet|retab!		" Set no expandtab retab
 set expandtab
 set cindent
