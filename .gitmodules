@@ -19,9 +19,6 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/ChoiZ/vim-snippets.git
-[submodule "bundle/vim-signify"]
-	path = bundle/vim-signify
-	url = https://github.com/ChoiZ/vim-signify.git
 [submodule "bundle/vim-tomorrow-night"]
 	path = bundle/vim-tomorrow-night
 	url = https://github.com/ChoiZ/vim-tomorrow-night.git
@@ -64,3 +61,6 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule "bundle/vim-signify"]
+	path = bundle/vim-signify
+	url = https://github.com/mhinz/vim-signify.git
