@@ -13,9 +13,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/ChoiZ/taglist.vim.git
-[submodule "bundle/vim-css3-syntax"]
-	path = bundle/vim-css3-syntax
-	url = https://github.com/ChoiZ/vim-css3-syntax.git
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
 	url = https://github.com/ChoiZ/vim-javascript.git
@@ -64,3 +61,6 @@
 [submodule "bundle/neosnippet.vim"]
 	path = bundle/neosnippet.vim
 	url = https://github.com/Shougo/neosnippet.vim.git
+[submodule "bundle/vim-css3-syntax"]
+	path = bundle/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
