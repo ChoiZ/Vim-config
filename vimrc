@@ -4,7 +4,7 @@
 "
 " Created on: 31th October 2008
 " Edited on: 6th December 2015
-" Version #: 592
+" Version #: 593
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
@@ -92,7 +92,7 @@ set modelines=5
 set hlsearch			    " highlight search
 set ignorecase			    " case insensitive on search
 set smartcase			    " case sensitive for caps on search
-				            "(/the return The, the... /The return only The)
+                            "(/the return The, the... /The return only The)
 
 set noerrorbells		    " No error bells
 set visualbell			    " Blink on error
