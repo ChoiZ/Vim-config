@@ -4,7 +4,7 @@
 "
 " Created on: 31th October 2008
 " Edited on: 6th December 2015
-" Version #: 593
+" Version #: 594
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
@@ -244,15 +244,8 @@ noremap <silent><F2> :let @/ = ""<CR>
 " Remove whitespace
 noremap <silent> <F3> :call StripTrailingWhitespace()<CR>
 
-"noremap <silent> <F4> :%s/^\(\s*\n\)\+/\r<CR>
-
-" Search $_a-Z or $client_first_Name…
-" \$\C\(\<\u[a-z0-9]\+\|[a-z0-9_]\+\)\(\u\)
-" noremap <F4> :let @/ = \$\C\(\<\u[a-z0-9]\+\|[a-z0-9_]\+\)\(\u\)<CR>
-
-" CamelCase to under_scores
-" %s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#gc
-" noremap <F5> :%s/\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)/\l\1_\l\2/gc<CR>
+" Display undotree
+noremap <silent> <F5> :call UndotreeToggle()<CR>
 
 "vmap <D-c> "*y
 "imap <D-v> <ESC>"*gPa
@@ -260,12 +253,12 @@ noremap <silent> <F3> :call StripTrailingWhitespace()<CR>
 
 " previous fold
 "inoremap <F4> <C-O>zk
-noremap <F4> zk
+"noremap <F4> zk
 "onoremap <F4> <C-C>zk
 
 " next fold
 "inoremap <F5> <C-O>zj
-noremap <F5> zj
+"noremap <F5> zj
 "onoremap <F5> <C-C>zj
 
 " open/close fold
