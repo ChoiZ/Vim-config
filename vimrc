@@ -4,7 +4,7 @@
 "
 " Created on: 31th October 2008
 " Edited on: 6th December 2015
-" Version #: 591
+" Version #: 592
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
@@ -188,17 +188,20 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 "" Airline {{{
 let g:airline_powerline_fonts = 1
-let g:airline_enable_branch = 1
-let g:airline_enable_syntastic = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
 
 " vim-powerline symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch    = '⭠'
+let g:airline_symbols.readonly  = '⭤'
+let g:airline_symbols.linenr    = '⭡'
 let g:airline_left_sep          = '⮀'
 let g:airline_left_alt_sep      = '⮁'
 let g:airline_right_sep         = '⮂'
 let g:airline_right_alt_sep     = '⮃'
-let g:airline_branch_prefix     = '⭠'
-let g:airline_readonly_symbol   = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
 "" }}}
 
 "" Syntastic {{{
