@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Created on: 31th October 2008
-" Edited on: 6th December 2015
-" Version #: 594
+" Edited on: 7th December 2015
+" Version #: 595
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
@@ -315,3 +315,24 @@ function! ToogleNumber()
         set relativenumber
     endif
 endfunc
+
+let g:vim_scp_configs = {
+\   'veoprint_supplier' : {
+\       'local_base_path'  : '/Users/f.lasserre/Documents/veoprint-supplier/',
+\       'remote_base_path' : '/root/www/',
+\       'user' : 'root',
+\       'pass' : 'vagrant',
+\       'host' : 'localhost',
+\       'port' : '2222'
+\   },
+\   'server2' : {
+\       'local_base_path'  : '/Users/development',
+\       'remote_base_path' : '/var/www/development/trunk/',
+\       'user' : 'username',
+\       'pass' : 'password',
+\       'host' : 'ip addess or domain name',
+\       'port' : '22'
+\   }
+\}
+
+nnoremap <silent> <C-U> <ESC>:call ScpUpload()<CR>

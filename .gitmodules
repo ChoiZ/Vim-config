@@ -55,3 +55,6 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "bundle/vim-scp-upload"]
+	path = bundle/vim-scp-upload
+	url = https://www.github.com/ryoppy/vim-scp-upload.git
