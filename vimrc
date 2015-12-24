@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Created on: 31th October 2008
-" Edited on: 7th December 2015
-" Version #: 595
+" Edited on: 24th December 2015
+" Version #: 596
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
@@ -17,8 +17,6 @@ set nocompatible
 
 " Resize splits when the window is resized: http://vimbits.com/bits/223
 au VimResized * exe "normal! \<c-w>="
-au InsertEnter * set paste
-au InsertLeave * set nopaste
 
 " Add pathogen
 call pathogen#runtime_append_all_bundles()
@@ -44,20 +42,16 @@ set history=100			    " Number of cmd in history
 set undolevels=100		    " Number of undo
 " }}}
 
-
 " TERM Preferences {{{
 set t_Co=256		        " The terminal supports 256 colors
 set title
 set titlestring=%f title	" Display filename in terminal window
 " }}}
 
-
 " FILES Preferences {{{
 filetype plugin indent on   " Set filetype
 syntax on                   " Set syntax highlighting
 
-" for veoprint lib…
-au BufRead,BufNewFile *.lib set filetype=php
 autocmd VimEnter COMMIT_EDITMSG setlocal filetype=gitcommit
 
 " Show Git diff in window split when commiting: http://vimbits.com/bits/173
@@ -82,22 +76,20 @@ set ruler
 set cursorline			    " View currentline
 set laststatus=2		    " Always show the statusline
 set foldcolumn=2
-
 set modeline
 set modelines=5
 " }}}
-
 
 " SEARCH / BELLS ERROR {{{
 set hlsearch			    " highlight search
 set ignorecase			    " case insensitive on search
 set smartcase			    " case sensitive for caps on search
-                            "(/the return The, the... /The return only The)
-
 set noerrorbells		    " No error bells
 set visualbell			    " Blink on error
-" }}}
 
+" Highlight trailing spaces: http://vimbits.com/bits/478
+match Error /\s\+$/
+" }}}
 
 " TEXT Preferences (indent,listchars,wrap) {{{
 "set preserveindent
@@ -106,77 +98,94 @@ set shiftwidth=4		    " Tab on autoindent
 set softtabstop=4
 set textwidth=80
 set wrapmargin=2
-"set noet|retab!		    " Set no expandtab retab
 set expandtab
 set cindent
 set smartindent
-"set autoindent
-
 set listchars=tab:\ \ ,trail:¤,extends:>,precedes:<,nbsp:¬
 set list
 set backspace=indent,eol,start
-
-"set textwidth=80
 set nowrap
 if version >= 703
     set colorcolumn=+0
 endif
-"set formatoptions=qn1
-
 set mouse=a
 set mousehide
 set clipboard+=unnamed
 set pastetoggle=<F10>
-
 set nohidden                " Don't destroy buffer
 " }}}
-
 
 " LAYOUT {{{
 "" bépo {{{
 noremap « <
 noremap » >
 "" }}}
+
+"" mapping {{{
+" CTRL + U: Upercase first char of the line http://vimbits.com/bits/505
+nnoremap <C-U> :%s/^./\u&/g<CR>
+
+"vmap <D-c> "*y
+"imap <D-v> <ESC>"*gPa
+"nmap <D-v> "*gP
+
+noremap <BS> <PageUp>
+noremap <Space> <PageDown>
+
+" lazy code folding / unfolding
+" toggle fold open (zo)/close (zc)
+noremap <C-Tab> za
+" toggle fold open (zO)/close (zC) on all folding levels
+noremap <S-Tab> zA
+
+noremap <C-S-Tab> zR
+
+" Remove current search
+noremap <silent><F2> :let @/ = ""<CR>
+
+" Remove whitespace
+noremap <silent> <F3> :call StripTrailingWhitespace()<CR>
+
+" Display undotree
+noremap <silent> <F5> :call UndotreeToggle()<CR>
+
+" Open all Folds
+noremap <F7> zR
+
+""" FocusMode
+nnoremap <silent> <F9> :call ToggleFocusMode()<CR>
+
+""" ToogleNumber
+nnoremap <silent> <F12> :call ToogleNumber()<CR>
+"" }}}
 " }}}
 
-
 " PLUGINS {{{
-"" Neocomplcache {{{
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_temporary_dir = $VIM_DIR.'/tmp/neocomplcache'
-"" }}}
 
-"" neosnippet {{{
+"" neosnippet.vim {{{
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" For snippet_complete marker.
+" For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+  set conceallevel=2 concealcursor=niv
 endif
-
-let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-"" }}}
-
-"" vim-snipmate {{{
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
 "" }}}
 
 "" Indent_Guides {{{
@@ -218,9 +227,7 @@ let curpwd=system('pwd')
 
 " }}}
 
-" Highlight trailing spaces: http://vimbits.com/bits/478
-match Error /\s\+$/
-
+" FUNCTIONS {{{
 function! StripTrailingWhitespace()
     " preparation: save last search, and cursor position.
     let _s=@/
@@ -234,54 +241,6 @@ function! StripTrailingWhitespace()
     let @/=_s
     call cursor(l, c)
 endfunction
-
-" CTRL + U: Upercase first char of the line http://vimbits.com/bits/505
-nnoremap <C-U> :%s/^./\u&/g<CR>
-
-" Remove current search
-noremap <silent><F2> :let @/ = ""<CR>
-
-" Remove whitespace
-noremap <silent> <F3> :call StripTrailingWhitespace()<CR>
-
-" Display undotree
-noremap <silent> <F5> :call UndotreeToggle()<CR>
-
-"vmap <D-c> "*y
-"imap <D-v> <ESC>"*gPa
-"nmap <D-v> "*gP
-
-" previous fold
-"inoremap <F4> <C-O>zk
-"noremap <F4> zk
-"onoremap <F4> <C-C>zk
-
-" next fold
-"inoremap <F5> <C-O>zj
-"noremap <F5> zj
-"onoremap <F5> <C-C>zj
-
-" open/close fold
-"inoremap <F6> <C-O>za
-noremap <F6> za
-"onoremap <F6> <C-C>za
-"vnoremap <F6> zf
-
-" open all
-"inoremap <F7> <C-O>zR
-noremap <F7> zR
-"onoremap <F7> <C-C>zR
-
-" close all
-"inoremap <F8> <C-O>zM
-noremap <F8> zM
-"onoremap <F8> <C-C>zM
-
-""" FocusMode
-nnoremap <silent> <F9> :call ToggleFocusMode()<CR>
-
-""" ToogleNumber
-nnoremap <silent> <F12> :call ToogleNumber()<CR>
 
 function! ToggleFocusMode()
     if (&ruler)
@@ -315,24 +274,4 @@ function! ToogleNumber()
         set relativenumber
     endif
 endfunc
-
-let g:vim_scp_configs = {
-\   'veoprint_supplier' : {
-\       'local_base_path'  : '/Users/f.lasserre/Documents/veoprint-supplier/',
-\       'remote_base_path' : '/root/www/',
-\       'user' : 'root',
-\       'pass' : 'vagrant',
-\       'host' : 'localhost',
-\       'port' : '2222'
-\   },
-\   'server2' : {
-\       'local_base_path'  : '/Users/development',
-\       'remote_base_path' : '/var/www/development/trunk/',
-\       'user' : 'username',
-\       'pass' : 'password',
-\       'host' : 'ip addess or domain name',
-\       'port' : '22'
-\   }
-\}
-
-nnoremap <silent> <C-U> <ESC>:call ScpUpload()<CR>
+" }}}
