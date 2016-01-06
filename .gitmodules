@@ -1,9 +1,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/indent-guides"]
-	path = bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -55,6 +52,3 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree.git
-[submodule "bundle/vim-scp-upload"]
-	path = bundle/vim-scp-upload
-	url = https://www.github.com/ryoppy/vim-scp-upload.git

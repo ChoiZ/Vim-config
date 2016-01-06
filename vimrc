@@ -188,13 +188,6 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 "" }}}
 
-"" Indent_Guides {{{
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 4
-let g:indent_guides_enable_on_vim_startup = 1
-"" }}}
-
 "" Airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
@@ -217,12 +210,6 @@ let g:airline_right_alt_sep     = '⮃'
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_javascript_checkers=['jshint']
-"" }}}
-
-"" PHP Doc {{{
-let g:pdv_cfg_Author = "François LASSERRE"
-let g:pdv_cfg_Copyright = "Copyright (c) François LASSERRE ".strftime("%Y")." All rights reserved."
-let curpwd=system('pwd')
 "" }}}
 
 " }}}
