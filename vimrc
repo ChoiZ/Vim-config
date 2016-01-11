@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Created on: 31th October 2008
-" Edited on: 24th December 2015
-" Version #: 596
+" Edited on: 11th January 2016
+" Version #: 597
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
@@ -110,7 +110,7 @@ if version >= 703
 endif
 set mouse=a
 set mousehide
-set clipboard+=unnamed
+set clipboard=unnamedplus
 set pastetoggle=<F10>
 set nohidden                " Don't destroy buffer
 " }}}
