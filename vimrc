@@ -3,8 +3,8 @@
 " vim: set foldmethod=marker:
 "
 " Created on: 31th October 2008
-" Edited on: 11th January 2016
-" Version #: 597
+" Edited on: 29 May 2016
+" Version #: 598
 "
 " This file is available on my github repo:
 " http://www.github.com/ChoiZ/Vim-config
@@ -15,12 +15,45 @@ let &titleold=getcwd()
 " Set nocompatible mode for vi
 set nocompatible
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'spf13/PIV'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'ChoiZ/taglist.vim'
+Plugin 'ChoiZ/vim-tomorrow-night'
+Plugin 'mbbill/undotree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-signify'
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'pangloss/vim-javascript'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-markdown'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
 " Resize splits when the window is resized: http://vimbits.com/bits/223
 au VimResized * exe "normal! \<c-w>="
-
-" Add pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
 " Backup - Swap Settings (undo file, levels, history…) {{{
 set nobackup
