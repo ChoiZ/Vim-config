@@ -15,6 +15,8 @@ let &titleold=getcwd()
 " Set nocompatible mode for vi
 set nocompatible
 
+" require by vundle
+filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
