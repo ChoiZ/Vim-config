@@ -24,23 +24,31 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Plugins
 Plugin 'spf13/PIV'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ChoiZ/taglist.vim'
-Plugin 'ChoiZ/vim-tomorrow-night'
 Plugin 'mbbill/undotree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/unite.vim'
+Bundle 'm2mdas/phpcomplete-extended'
+Bundle 'm2mdas/phpcomplete-extended-symfony'
+
+" Color schemes
+Plugin 'ChoiZ/vim-tomorrow-night'
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -195,60 +203,6 @@ nnoremap <silent> <F12> :call ToogleNumber()<CR>
 "" }}}
 " }}}
 
-" PLUGINS {{{
-
-"" neosnippet.vim {{{
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-"" }}}
-
-"" Airline {{{
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
-
-" vim-powerline symbols
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch    = '⭠'
-let g:airline_symbols.readonly  = '⭤'
-let g:airline_symbols.linenr    = '⭡'
-let g:airline_left_sep          = '⮀'
-let g:airline_left_alt_sep      = '⮁'
-let g:airline_right_sep         = '⮂'
-let g:airline_right_alt_sep     = '⮃'
-"" }}}
-
-"" Syntastic {{{
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_javascript_checkers=['jshint']
-"" }}}
-
-" }}}
-
 " FUNCTIONS {{{
 function! StripTrailingWhitespace()
     " preparation: save last search, and cursor position.
@@ -296,4 +250,42 @@ function! ToogleNumber()
         set relativenumber
     endif
 endfunc
+" }}}
+
+" PLUGINS {{{
+
+"" Airline {{{
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+
+" vim-powerline symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch    = '⭠'
+let g:airline_symbols.readonly  = '⭤'
+let g:airline_symbols.linenr    = '⭡'
+let g:airline_left_sep          = '⮀'
+let g:airline_left_alt_sep      = '⮁'
+let g:airline_right_sep         = '⮂'
+let g:airline_right_alt_sep     = '⮃'
+"" }}}
+
+"" Syntastic {{{
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_javascript_checkers=['jshint']
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+"" }}}
+
+"" Unite {{{
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+let g:phpcomplete_search_tags_for_variables = 1
+
+nnoremap <C-p> :Unite file_rec/async<cr>
+"" }}}
+
 " }}}
