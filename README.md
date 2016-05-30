@@ -6,16 +6,8 @@ To setup on your system, open a terminal and paste the following code.
 
 ```
 mv ~/.vim ~/.vim-backup-`date +%F`
-
 git clone https://github.com/ChoiZ/Vim-config.git ~/.vim
-
 ln -s ~/.vim/vimrc ~/.vimrc
-
-cd ~/.vim && git submodule update --init
-```
-
-Install plugins:
-```
 vim +PluginInstall +qall
 cd bundle/Shougo/vimproc && make
 ```
