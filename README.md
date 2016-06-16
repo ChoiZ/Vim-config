@@ -19,6 +19,6 @@ Debian/Ubuntu:
 sudo apt-get install ctags
 ```
 
-za | Toggle current fold
-zR | Open all folds
-zM | Close all folds
+| za | Toggle current fold |
+| zR | Open all folds |
+| zM | Close all folds |
