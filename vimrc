@@ -96,7 +96,7 @@ match Error /\s\+$/
 set tabstop=4			    " 1 Tab = 4 spaces
 set shiftwidth=4		    " Tab on autoindent
 set softtabstop=4
-set textwidth=80
+set textwidth=120
 set wrapmargin=2
 set expandtab
 set cindent
@@ -162,32 +162,6 @@ nnoremap <silent> <F12> :call ToogleNumber()<CR>
 
 " PLUGINS {{{
 
-"" neosnippet.vim {{{
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-"" }}}
-
 "" Airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
@@ -207,9 +181,42 @@ let g:airline_right_alt_sep     = '⮃'
 "" }}}
 
 "" Syntastic {{{
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_javascript_checkers=['jshint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+"" }}}
+
+"" PIV {{{
+let g:DisableAutoPHPFolding = 1
+map <F8> <Esc>:DisablePHPFolds<Cr>
+"" }}}
+
+"" vim-php-namespace {{{
+function! IPhpInsertUse()
+        call PhpInsertUse()
+            call feedkeys('a',  'n')
+        endfunction
+        autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+        autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+"" }}}
+
+"" vim-php-cs-fixer {{{
+" If php-cs-fixer is in $PATH, you don't need to define line below
+let g:php_cs_fixer_path = "php-cs-fixer" " define the path to the php-cs-fixer.phar
+let g:php_cs_fixer_level = "symfony"              " which level ?
+let g:php_cs_fixer_config = "default"             " configuration
+"let g:php_cs_fixer_config_file = '.php_cs'       " configuration file
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+" If you want to define specific fixers:
+"let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
+let g:php_cs_fixer_enable_default_mapping = 0     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 1                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 1                    " Return the output of command if 1, else an inline information.
 "" }}}
 
 " }}}
