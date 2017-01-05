@@ -38,14 +38,14 @@ if version >= 703
     endif
 endif
 
-set history=100			    " Number of cmd in history
-set undolevels=100		    " Number of undo
+set history=100             " Number of cmd in history
+set undolevels=100          " Number of undo
 " }}}
 
 " TERM Preferences {{{
-set t_Co=256		        " The terminal supports 256 colors
+set t_Co=256                " The terminal supports 256 colors
 set title
-set titlestring=%f title	" Display filename in terminal window
+set titlestring=%f title    " Display filename in terminal window
 " }}}
 
 " FILES Preferences {{{
@@ -58,34 +58,35 @@ autocmd VimEnter COMMIT_EDITMSG setlocal filetype=gitcommit
 autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
 
 " Define file format to utf-8
-set encoding=utf-8 nobomb	" No Byte Order Mark!
+set encoding=utf-8 nobomb    " No Byte Order Mark!
 set fileencoding=utf-8      " File encode to utf-8
 set binary
-set noeol			        " Don't add empty newlines at the end of files
+set noeol                    " Don't add empty newlines at the end of files
 
 " colors: font, background and colorscheme
 set guifont="Monaco for Powerline":h10
+set antialias
 set background=dark
 colorscheme Tomorrow-Night-Bright
 
 set showcmd
-set showmatch			    " Show open or close bracket
-set number			        " Add line number
+set showmatch                " Show open or close bracket
+set number                    " Add line number
 set norelativenumber        " No relative number (enable it with F12)
 set ruler
-set cursorline			    " View currentline
-set laststatus=2		    " Always show the statusline
+set cursorline                " View currentline
+set laststatus=2            " Always show the statusline
 set foldcolumn=2
 set modeline
 set modelines=5
 " }}}
 
 " SEARCH / BELLS ERROR {{{
-set hlsearch			    " highlight search
-set ignorecase			    " case insensitive on search
-set smartcase			    " case sensitive for caps on search
-set noerrorbells		    " No error bells
-set visualbell			    " Blink on error
+set hlsearch                " highlight search
+set noignorecase            " case sensitive on search
+set smartcase                " case sensitive for caps on search
+set noerrorbells            " No error bells
+set visualbell                " Blink on error
 
 " Highlight trailing spaces: http://vimbits.com/bits/478
 match Error /\s\+$/
@@ -93,8 +94,8 @@ match Error /\s\+$/
 
 " TEXT Preferences (indent,listchars,wrap) {{{
 "set preserveindent
-set tabstop=4			    " 1 Tab = 4 spaces
-set shiftwidth=4		    " Tab on autoindent
+set tabstop=4                " 1 Tab = 4 spaces
+set shiftwidth=4            " Tab on autoindent
 set softtabstop=4
 set textwidth=120
 set wrapmargin=2
